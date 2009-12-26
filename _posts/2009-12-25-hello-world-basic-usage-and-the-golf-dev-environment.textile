@@ -15,7 +15,7 @@ Now, Golf apps are built using the MVC (Model-View-Controller) architecture. The
 
 h2. A Simple Controller
 
-The controller is defined in the special file _controller.js_, in the root of the app directory. This file is a JS source file, evaled in the global scope when the app is first loaded into the client. It's very flexible, and you can do all kinds of things in the _controller.js_ file, but for now we'll stick to the basics.
+The controller is defined in the special file _controller.js_, in the root of the app directory. This file is a JS source file, evaled in the global scope when the app is first loaded into the client.
 
 Create the _controller.js_ file with the following contents:
 
