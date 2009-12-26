@@ -1,0 +1,21 @@
+---
+layout: post
+title: Overview
+author: Micha Niskin
+---
+
+Golf is a web application server. It provides a way to build and deploy JavaScript (JS) driven webapps without sacrificing accessibility to JS-disabled browsers. By making dynamic, JS generated content fully accessible, Golf apps are designed from the ground up as clientside applications, and take advantage of a powerful, rich JS runtime environment.
+
+h2. Features
+
+This is what it does:
+
+* Does stuff
+* And more stuff
+* And even more stuff
+
+okay?
+
+h2. Design Goals
+
+This is a test!
