@@ -16,7 +16,7 @@ title: Golf Application Server
 
   <ul class="posts toc">
     {% for post in site.categories.news limit:3 %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a> <a href="{{ post.url }}#disqus_thread">Comment</a></li>
     {% endfor %}
   </ul>
 
