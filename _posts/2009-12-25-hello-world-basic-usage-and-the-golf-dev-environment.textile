@@ -11,13 +11,13 @@ cd golf-example
 
 Okay, great. From now on we'll refer to this directory as the _app directory_ or _approot_.
 
-Now, Golf apps are built using the MVC (Model-View-Controller) architecture. The absolute minimal Golf app is a bare controller. Normally, an app would have views and models to deal with, but since this is just a "Hello, World" example it will be kept as simple as possible.
+Now, Golf apps are built using the MVC (Model-View-Controller) architecture. The absolute minimal Golf app is a bare controller. Normally, an app would have views and models to deal with, but since this is just a "Hello, World" example we'll just hardcode everything into the controller.
 
 h2. A Simple Controller
 
-Golf apps define their controller in a special file called _controller.js_, located in the @approot@. This file is a JS source file, evaled in the global scope when the app is first loaded into the client. It's very flexible, and you can do all kinds of things in the _controller.js_ file, but for now we'll stick to the basics.
+The controller is defined in the special file _controller.js_, in the root of the app directory. This file is a JS source file, evaled in the global scope when the app is first loaded into the client. It's very flexible, and you can do all kinds of things in the _controller.js_ file, but for now we'll stick to the basics.
 
-Create a file with the following contents:
+Create the _controller.js_ file with the following contents:
 
 {% highlight javascript linenos %}
 $.golf.controller = [
@@ -29,9 +29,9 @@ $.golf.controller = [
 ];
 {% endhighlight %}
 
-and save it as _controller.js_.
+When the app is first loaded into the client, Golf will handle the request by performing a regular expression match of the URI fragment (the part of the URI following the @#@ character) against the @route@ property of each object in the @$.golf.controller@ array. It will then handle the request by delegating to the corresponding @action@.
 
-What is happening here is that the @$.golf.controller@ array is being populated with "routes". When the app is first loaded into the client, the Golf app will be looking for the @$.golf.controller@ array, so it can configure its routing system.
+Here you can see we created a sort of catchall route, with the @route@ property set to the regex @.*@, matching any URI fragment and thus handling every request.
 
 h2. The Local Dev Server
 
