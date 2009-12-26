@@ -1,0 +1,7 @@
+---
+layout: post
+title: Test Post 2
+author: Micha Niskin
+---
+
+This is a test!
