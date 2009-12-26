@@ -1,0 +1,66 @@
+---
+layout: post
+title: "Hello, World: Basic Usage And The Golf Dev Environment"
+author: Micha Niskin
+---
+
+So, now it's time to make a simple, "Hello, World" type of application to get started with Golf. The first thing is to create a directory in which to place all of the files that will make up your Golf app.
+
+bc. mkdir golf-example
+cd golf-example
+
+Okay, great. From now on we'll refer to this directory as the @approot@.
+
+Now, Golf apps are built using the MVC (Model-View-Controller) architecture. The absolute minimal Golf app is a bare controller. Normally, an app would have views and models to deal with, but since this is just a "Hello, World" example it will be kept as simple as possible.
+
+h2. Write A Simple Controller
+
+Golf apps define their controller in a special file called _controller.js_, located in the @approot@. This file is a JS source file, evaled in the global scope when the app is first loaded into the client. It's very flexible, and you can do all kinds of things in the _controller.js_ file, but for now we'll stick to a very simple example.
+
+Create a file named _controller.js_ with the following contents:
+
+{% highlight javascript linenos %}
+$.golf.controller = [
+  { route: ".*",
+    action: function(b, match) {
+      b.empty().append("<h1>Hello, world! This is " + match[0] + "!</h1>");
+    }
+  }
+];
+{% endhighlight %}
+
+What is happening here is that the @$.golf.controller@ array is being populated with "routes". When the app is first loaded into the client, the Golf app will be looking for the @$.golf.controller@ array, so it can configure its routing system.
+
+h2. Start The Local Dev Server
+
+From you terminal you can now do:
+
+bc. golf .
+
+You will be able to see what's going on inside of golf as you watch the logging output (this is much more verbose than when running in production mode).
+
+h2. Test The "Hello, World" App In Your Browser
+
+Open a browser and go to "http://localhost:4653/golf-example/":http://localhost:4653/golf-example/. You should see something like this:
+
+!/images/hello-world1.png!:/images/hello-world1.png
+
+You should be at the URI "http://localhost:4653/golf-example/#/home/":http://localhost:4653/golf-example/#/home/ now. Try changing the URI fragment from @/home/@ to something else, like @/asdf/@ or @/qwerty/@. Try changing it a few times. Try using the "back" and "forward" buttons in your browser to go back and forth. Notice how the page does not reload when navigating around the app.
+
+Another thing you can do is remove the @.empty()@ from line 4 of _controller.js_:
+
+{% highlight javascript linenos %}
+$.golf.controller = [
+  { route: ".*",
+    action: function(b, match) {
+      b.append("<h1>Hello, world! This is " + match[0] + "!</h1>");
+    }
+  }
+];
+{% endhighlight %}
+
+Now what happens when you go back and forth between URI fragments?
+
+h2. Disable JavaScript In Your Browser And Test The App
+
+The "Hello, World" app should work just the same, even with JS turned off in your browser. This is because the Golf server is "proxying" the JS. We'll get into this more later.

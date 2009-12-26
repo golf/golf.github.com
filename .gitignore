@@ -1,0 +1,5 @@
+build/*
+dist/*
+_site/*
+*.swp
+*.swo

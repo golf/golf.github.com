@@ -1,0 +1,5 @@
+auto: true
+pygments: true
+markdown: rdiscount
+permalink: /:title/
+url: http://ubergibson.com:4000
