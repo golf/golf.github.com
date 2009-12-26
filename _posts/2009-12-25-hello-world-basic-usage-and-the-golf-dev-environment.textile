@@ -29,8 +29,6 @@ $.golf.controller = [
 ];
 {% endhighlight %}
 
-When the app is first loaded into the client, Golf will handle the request by performing a regular expression match of the URI fragment (the part of the URI following the @#@ character) against the @route@ property of each object in the @$.golf.controller@ array. It will then handle the request by delegating to the corresponding @action@.
-
 Here you can see we created a sort of catchall route, with the @route@ property set to the regex @.*@, matching any URI fragment and thus handling every request.
 
 h2. The Local Dev Server
