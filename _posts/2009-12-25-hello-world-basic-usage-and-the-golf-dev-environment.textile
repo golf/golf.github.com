@@ -43,6 +43,8 @@ Open a browser and go to "http://localhost:4653/golf-example/":http://localhost:
 
 !/images/hello-world1.png!:/images/hello-world1.png
 
+h2. Experiment With Your New App
+
 You should be at the URI "http://localhost:4653/golf-example/#/home/":http://localhost:4653/golf-example/#/home/ now. Try changing the URI fragment from @/home/@ to something else, like @/asdf/@ or @/qwerty/@. Try changing it a few times. Try using the "back" and "forward" buttons in your browser to go back and forth. Notice how the page does not reload when navigating around the app.
 
 Another thing you can do is remove the @.empty()@ from line 4 of _controller.js_:
