@@ -39,7 +39,7 @@ a {
 }
 
 a:hover, a:visited:hover {
-  color: #a00;
+  color: black;
 }
 
 a:visited {
@@ -112,12 +112,14 @@ img {
     color: black;
   }
 
+  .site #home a.extra,
   .site .title a.extra {
     color: #aaa;
     text-decoration: none;
     margin-left: 1em;
   }
 
+  .site #home a.extra:hover,
   .site .title a.extra:hover {
     color: black;
   }
