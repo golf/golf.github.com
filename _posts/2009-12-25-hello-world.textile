@@ -9,15 +9,15 @@ So, now it's time to make a simple, "Hello, World" type of application to get st
 bc. mkdir golf-example
 cd golf-example
 
-Okay, great. From now on we'll refer to this directory as the @approot@.
+Okay, great. From now on we'll refer to this directory as the _app directory_ or _approot_.
 
 Now, Golf apps are built using the MVC (Model-View-Controller) architecture. The absolute minimal Golf app is a bare controller. Normally, an app would have views and models to deal with, but since this is just a "Hello, World" example it will be kept as simple as possible.
 
-h2. Write A Simple Controller
+h2. A Simple Controller
 
-Golf apps define their controller in a special file called _controller.js_, located in the @approot@. This file is a JS source file, evaled in the global scope when the app is first loaded into the client. It's very flexible, and you can do all kinds of things in the _controller.js_ file, but for now we'll stick to a very simple example.
+Golf apps define their controller in a special file called _controller.js_, located in the @approot@. This file is a JS source file, evaled in the global scope when the app is first loaded into the client. It's very flexible, and you can do all kinds of things in the _controller.js_ file, but for now we'll stick to the basics.
 
-Create a file named _controller.js_ with the following contents:
+Create a file with the following contents:
 
 {% highlight javascript linenos %}
 $.golf.controller = [
@@ -29,17 +29,15 @@ $.golf.controller = [
 ];
 {% endhighlight %}
 
+and save it as _controller.js_.
+
 What is happening here is that the @$.golf.controller@ array is being populated with "routes". When the app is first loaded into the client, the Golf app will be looking for the @$.golf.controller@ array, so it can configure its routing system.
 
-h2. Start The Local Dev Server
+h2. The Local Dev Server
 
-From you terminal you can now do:
+Now let's start up the Golf server in local dev mode. In your terminal go to the app directory and do:
 
 bc. golf .
-
-You will be able to see what's going on inside of golf as you watch the logging output (this is much more verbose than when running in production mode).
-
-h2. Test The "Hello, World" App In Your Browser
 
 Open a browser and go to "http://localhost:4653/golf-example/":http://localhost:4653/golf-example/. You should see something like this:
 
