@@ -13,6 +13,9 @@
    <!-- Homepage CSS -->
    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 
+   <!-- jQuery -->
+   <script type="text/javascript" src="/js/jquery.js"></script>
+
    <!-- Typekit -->
    <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -54,15 +57,31 @@
 //]]>
 </script>
 
+<!-- Disqus Comments -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
+
+<script type="text/javascript>
+  $(function() {
+      $("#dsq-new-post").after(
+        $("<a href='javascript:void(0)'>Click here to leave a comment.</a>")
+          .click(function() {
+            this.remove();
+            $("#dsq-new-post").show();
+          })
+      ).hide();
+  });
+</script>
+
+<!-- Google Analytics -->
 <script type="text/javascript">
 try {
 var pageTracker = _gat._getTracker("UA-8437802-6");
 pageTracker._trackPageview();
-} catch(err) {}</script>
+} catch(err) {}
+</script>
 
 </body>
 </html>
