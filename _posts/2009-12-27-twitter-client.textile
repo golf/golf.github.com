@@ -1,10 +1,10 @@
 --
 layout: post
-categories: [examples]
 author: Julio Capote
 author_email: bigdog@yahoo.com
+categories: [examples]
 title: Twitter Client
-description: Client for twitter.com API. Enter some text into the form and click submit to see a live twitter search.
+description: "Client for twitter.com API. Enter some text into the form and click submit to see a live twitter search."
 link: "http://github.com/capotej/golf-twitter-app"
 --
 
