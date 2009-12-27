@@ -205,11 +205,6 @@ img {
     background-color: #333;
   }
 
-  #post .endmark {
-    width: 40em;
-    text-align: center;
-  }
-
 #related {
   margin-top: 2em;
 }
@@ -221,4 +216,5 @@ img {
 #disqus_thread {
   font: 13.34px helvetica, arial, clean, sans-serif;
   margin-top: 2em;
+  border-top: 4px solid #eee;
 }
