@@ -1,7 +1,6 @@
 ---
 layout: post
 author: Julio Capote
-author_email: bigdog@yahoo.com
 categories: [examples]
 title: Twitter Client
 description: Client for twitter.com API. Enter some text into the form and click submit to see a live twitter search.
