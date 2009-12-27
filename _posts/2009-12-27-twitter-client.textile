@@ -4,7 +4,7 @@ author: Julio Capote
 categories: [examples]
 title: Twitter Client
 description: Client for the twitter.com API. Enter a search term into the form, submit, and see the latest tweets!
-source: 'http://github.com/capotej/golf-twitter-app'
+link: 'http://github.com/capotej/golf-twitter-app'
 ---
 
 {{ page.description }}
