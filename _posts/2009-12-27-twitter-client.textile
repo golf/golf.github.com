@@ -3,8 +3,6 @@ layout: post
 author: Julio Capote
 categories: [examples]
 title: Twitter Client
-description: Client for twitter.com API. Enter some text into the form and click submit to see a live twitter search.
-link: "http://github.com/capotej/golf-twitter-app"
 ---
 
 h2. {{ post.title }}
