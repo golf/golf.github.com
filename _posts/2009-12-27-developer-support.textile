@@ -25,7 +25,7 @@ Otherwise, see the following:
       <td><a href="irc://irc.freenode.net/golfdev">#golfdev</a> on irc.freenode.net</td>
     </tr>
     <tr>
-      <td><h3>Follow on twitter:</h3></td>
+      <td><h3>Follow Golf on twitter:</h3></td>
       <td><a href="http://twitter.com/golfdev">@golfdev</a></td>
     </tr>
     <tr>
