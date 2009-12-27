@@ -4,8 +4,6 @@ title: Developer Support
 author: Micha Niskin
 ---
 
-h2. Developer Support
-
 For issues related to this document (i.e. the <a href="{{ site.url }}">{{ site.url }}</a> site), please leave a comment on the specific article page itself, if possible.
 
 Otherwise, see the following:
