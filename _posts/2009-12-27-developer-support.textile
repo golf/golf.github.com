@@ -17,7 +17,7 @@ Otherwise, see the following:
       <td><a href="http://github.com/golf/golf/issues">http://github.com/golf/golf/issues</a></td>
     </tr>
     <tr>
-      <td><h3>Other documentation issues:</h3></td>
+      <td><h3>Other issues with this site:</h3></td>
       <td><a href="http://github.com/golf/golf.github.com/issues">http://github.com/golf/golf.github.com/issues</a></td>
     </tr>
     <tr>
