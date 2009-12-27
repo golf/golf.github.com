@@ -4,11 +4,11 @@ title: Install Golf On Your Workstation
 author: Micha Niskin
 ---
 
-1. Download the Golf zip file.
+# Download the Golf zip file.
 
-** "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip
+#* "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip
 
-2. Unzip the zip file into a directory in your path (e.g. @~/bin@).
+# Unzip the zip file into a directory in your path (e.g. @~/bin@).
 
 That's all. Now you can open a terminal and do:
 
