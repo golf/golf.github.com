@@ -1,0 +1,31 @@
+---
+layout: post
+title: Developer Support
+---
+
+h2. Developer Support
+
+For issues related to this document (i.e. the <a href="{{ site.url }}">{{ site.url }}</a> site), please leave a comment on the specific article page itself, if possible.
+
+Otherwise, see the following:
+
+<notextile>
+  <table width="100%" class="support" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>Bug reports:</td>
+      <td><a href="http://github.com/golf/golf/issues">http://github.com/golf/golf/issues</a></td>
+    </tr>
+    <tr>
+      <td>Other documentation issues:</td>
+      <td><a href="http://github.com/golf/golf.github.com/issues">http://github.com/golf/golf.github.com/issues</a></td>
+    </tr>
+    <tr>
+      <td>IRC channel:</td>
+      <td><a href="irc://irc.freenode.net/golfdev">#golfdev</a> on irc.freenode.net</td>
+    </tr>
+    <tr>
+      <td>Google Groups:</td>
+      <td><a href="http://groups.google.com/group/minimo-golf">http://groups.google.com/group/minimo-golf</a></td>
+    </tr>
+  </table>
+</notextile>
