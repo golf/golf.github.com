@@ -1,0 +1,8 @@
+---
+layout: post
+title: Test Post 2
+categories: [news]
+author: Micha Niskin
+---
+
+This is a test!
