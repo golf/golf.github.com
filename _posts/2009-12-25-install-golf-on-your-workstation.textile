@@ -4,7 +4,7 @@ title: Install Golf On Your Workstation
 author: Micha Niskin
 ---
 
-1. Download the latest Golf distribution zip file here: "golf-latest.zip":http://cloud.github.com/downloads/golf/golf/golf-latest.zip
+1. Download the latest Golf distribution zip file here: "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip
 
 2. Unzip the zip file into a directory that's in your path. For example, you could probably use @~/bin@.
 
