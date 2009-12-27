@@ -205,6 +205,10 @@ img {
     background-color: #333;
   }
 
+  #post .endmark {
+    text-align: center;
+  }
+
 #related {
   margin-top: 2em;
 }
