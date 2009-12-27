@@ -70,8 +70,10 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
           .click(function() {
             this.remove();
             $("#dsq-new-post").show();
+            return false;
           })
-      ).hide();
+      );
+      $("#dsq-new-post").hide();
   });
 </script>
 
