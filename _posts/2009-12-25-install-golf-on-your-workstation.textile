@@ -6,16 +6,13 @@ author: Micha Niskin
 
 Installing Golf is simple.
 
-#. Download the latest Golf distribution zip file here: "golf-latest.zip":http://cloud.github.com/downloads/golf/golf/golf-latest.jar
+1. Download the latest Golf distribution zip file here: "golf-latest.zip":http://cloud.github.com/downloads/golf/golf/golf-latest.zip
 
-First, get the latest version of the Golf jar file and put it somewhere in your path. We'll assume that it's going to be in the @~/bin@ directory, and that that directory is in your path. From a bash terminal do the following:
+2. Unzip the zip file into a directory that's in your path. For example, you could probably use @~/bin@.
 
-bc. curl http://cloud.github.com/downloads/golf/golf/golf-latest.jar > golf.jar
-mv golf.jar ~/bin
-echo 'java -jar "$(dirname "$0")"/golf.jar "$@"' > ~/bin/golf
-chmod 755 ~/bin/golf
+3. Done.
 
-Now you should be able to do this:
+Now you can open a terminal and do this:
 
 bc. golf --help
 
