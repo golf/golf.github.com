@@ -2,4 +2,4 @@ auto: true
 pygments: true
 markdown: rdiscount
 permalink: /:categories/:title/
-url: http://ubergibson.com:4000
+url: http://golf.github.com
