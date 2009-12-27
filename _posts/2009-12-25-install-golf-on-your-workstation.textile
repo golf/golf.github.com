@@ -4,6 +4,10 @@ title: Install Golf On Your Workstation
 author: Micha Niskin
 ---
 
+Installing Golf is simple.
+
+#. Download the latest Golf distribution zip file here: "golf-latest.zip":http://cloud.github.com/downloads/golf/golf/golf-latest.jar
+
 First, get the latest version of the Golf jar file and put it somewhere in your path. We'll assume that it's going to be in the @~/bin@ directory, and that that directory is in your path. From a bash terminal do the following:
 
 bc. curl http://cloud.github.com/downloads/golf/golf/golf-latest.jar > golf.jar
