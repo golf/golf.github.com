@@ -3,6 +3,7 @@ layout: post
 author: Julio Capote
 categories: [examples]
 title: Twitter Client
+description: Client for the twitter.com API. Enter a search term into the form, submit, and see the latest tweets!
 ---
 
-h2. {{ post.title }}
+h2. {{ page.title }}
