@@ -13,9 +13,6 @@
    <!-- Homepage CSS -->
    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 
-   <!-- jQuery -->
-   <script type="text/javascript" src="/js/jquery.js"></script>
-
    <!-- Typekit -->
    <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -58,32 +55,6 @@
 //]]>
 </script>
 
-<script type="text/javascript>
-  $(function() {
-      alert("git here");
-      var f = function() {
-          console.log("got here 1");
-        if (!$("#dsq-new-post").size())
-          return setTimeout(f, 100);
-
-          console.log("got here 2");
-          /*
-        $("#dsq-new-post").after(
-          $("<a href='javascript:void(0)'>Click here to leave a comment.</a>")
-            .click(function() {
-              this.remove();
-              $("#dsq-new-post").show();
-              return false;
-            })
-        );
-        */
-          console.log("got here 3");
-        $("#dsq-new-post").hide();
-      };
-      f();
-  });
-</script>
-
 <!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -94,8 +65,7 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 try {
 var pageTracker = _gat._getTracker("UA-8437802-6");
 pageTracker._trackPageview();
-} catch(err) {}
-</script>
+} catch(err) {}</script>
 
 </body>
 </html>
