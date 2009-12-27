@@ -28,5 +28,9 @@ Otherwise, see the following:
       <td><h3>Google Groups:</h3></td>
       <td><a href="http://groups.google.com/group/minimo-golf">http://groups.google.com/group/minimo-golf</a></td>
     </tr>
+    <tr>
+      <td><h3>Twitter:</h3></td>
+      <td><a href="http://twitter.com/golfdev">@golfdev</a></td>
+    </tr>
   </table>
 </notextile>
