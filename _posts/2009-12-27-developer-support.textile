@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Developer Support
+author: Micha Niskin
 ---
 
 h2. Developer Support
