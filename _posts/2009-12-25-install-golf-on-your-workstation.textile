@@ -8,7 +8,7 @@ author: Micha Niskin
 
 2. Unzip the zip file into a directory that's in your path. For example, you could probably use @~/bin@.
 
-That's all. Now you can open a terminal and do this:
+That's all. Now you can open a terminal and do:
 
 bc. golf --help
 
