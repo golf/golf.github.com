@@ -41,24 +41,6 @@ Open a browser and go to "http://localhost:4653/golf-example/":http://localhost:
 
 !/images/hello-world1.png!:/images/hello-world1.png
 
-h2. Experiment With Your New App
-
-You should be at the URI "http://localhost:4653/golf-example/#/home/":http://localhost:4653/golf-example/#/home/ now. Try changing the URI fragment from @/home/@ to something else, like @/asdf/@ or @/qwerty/@. Try changing it a few times. Try using the "back" and "forward" buttons in your browser to go back and forth. Notice how the page does not reload when navigating around the app.
-
-Another thing you can do is remove the @.empty()@ from line 4 of _controller.js_:
-
-{% highlight javascript linenos %}
-$.golf.controller = [
-  { route: ".*",
-    action: function(b, match) {
-      b.append("<h1>Hello, world! This is " + match[0] + "!</h1>");
-    }
-  }
-];
-{% endhighlight %}
-
-Now what happens when you go back and forth between URI fragments?
-
 h2. Disable JavaScript In Your Browser And Test The App
 
-The "Hello, World" app should work just the same, even with JS turned off in your browser. This is because the Golf server is "proxying" the JS. We'll get into this more later.
+Notice how the application remains accessible, regardless of whether JS is enabled, or not. The JS proxy mechanism that makes this possible is discussed in depth in the "Technical" section of the docs.
