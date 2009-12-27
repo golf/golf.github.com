@@ -1,0 +1,7 @@
+---
+layout: post
+title: Test Post 1
+author: Micha Niskin
+---
+
+Golf "components" are reusable, self contained units from which the MVC views are created. Components are constructed of HTML, CSS, and JS. 
