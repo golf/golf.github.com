@@ -9,4 +9,4 @@ link: 'http://github.com/capotej/golf-twitter-app'
 
 {{ page.description }}
 
-Check it out: "{{ page.link }}":{{ page.link }}
+"{{ page.link }}":{{ page.link }}
