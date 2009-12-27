@@ -13,7 +13,7 @@ Otherwise, see the following:
 <notextile>
   <table width="100%" class="support" cellspacing="0" cellpadding="0">
     <tr>
-      <td>Bug reports:</td>
+      <td><h3>Bug reports:</h3></td>
       <td><a href="http://github.com/golf/golf/issues">http://github.com/golf/golf/issues</a></td>
     </tr>
     <tr>
