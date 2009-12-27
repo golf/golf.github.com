@@ -22,8 +22,8 @@ Create the _controller.js_ file with the following contents:
 {% highlight javascript linenos %}
 $.golf.controller = [
   { route: ".*",
-    action: function(b, match) {
-      b.empty().append("<h1>Hello, world! This is " + match[0] + "!</h1>");
+    action: function(container, params) {
+      container.empty().append("<h1>Hello, world! This is " + params[0] + "!</h1>");
     }
   }
 ];
