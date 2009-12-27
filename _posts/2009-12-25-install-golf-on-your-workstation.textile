@@ -7,7 +7,7 @@ author: Micha Niskin
 # Download the Golf zip file. &laquo; "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip
 # Unzip it into a directory in your path (e.g. @~/bin@).
 
-That's all. Now you can open a terminal and do:
+Now you can open a terminal and do:
 
 bc. golf --help
 
