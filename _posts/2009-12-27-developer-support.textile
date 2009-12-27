@@ -17,15 +17,15 @@ Otherwise, see the following:
       <td><a href="http://github.com/golf/golf/issues">http://github.com/golf/golf/issues</a></td>
     </tr>
     <tr>
-      <td>Other documentation issues:</td>
+      <td><h3>Other documentation issues:</h3></td>
       <td><a href="http://github.com/golf/golf.github.com/issues">http://github.com/golf/golf.github.com/issues</a></td>
     </tr>
     <tr>
-      <td>IRC channel:</td>
+      <td><h3>IRC channel:</h3></td>
       <td><a href="irc://irc.freenode.net/golfdev">#golfdev</a> on irc.freenode.net</td>
     </tr>
     <tr>
-      <td>Google Groups:</td>
+      <td><h3>Google Groups:</h3></td>
       <td><a href="http://groups.google.com/group/minimo-golf">http://groups.google.com/group/minimo-golf</a></td>
     </tr>
   </table>
