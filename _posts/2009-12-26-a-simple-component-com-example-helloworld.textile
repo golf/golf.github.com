@@ -1,0 +1,17 @@
+---
+layout: post
+title: "A Simple Component: com.example.HelloWorld"
+author: Micha Niskin
+---
+
+Golf _components_ are reusable, self contained units from which the MVC views are created. Components are constructed from regular HTML, CSS, and JS. They are instantiated in your JS code and inserted into the DOM using jQuery.
+
+Before we can start writing components we must first create the _components_ directory in the application root directory. This is the folder where all of the application's components must be located.
+
+bc. mkdir components
+
+Next, we will create the _components/com/example/HelloWorld_ directory. This is similar to Java's package system; components in the _com/example/_ directory will be in the _com.example_ namespace.
+
+bc. mkdir -p components/com/example/HelloWorld
+
+
