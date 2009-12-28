@@ -1,0 +1,35 @@
+---
+layout: post
+title: "Conventions 2: Global Variables And Reserved Names"
+author: Micha Niskin
+---
+
+Golf provides a fairly complex and flexible framework in which to build and deploy your web applications. One of the overriding design goals has been to simplify app development as much as possible.
+
+In order to reduce the amount of time spent editing configuration files we chose _convention_ over _configuration_. Golf aims to provide a very consistent and predictable set of conventions and consistent, sensible defaults.
+
+h2(#directory-structure). Directory Structure
+
+Golf applications are contained in a single directory. This directory is what we call the _app root_ directory. Inside this directory there are a number of (optional) subdirectories that have special significance.
+
+- components := The _components_ directory contains all of the application's components. Within this directory is a heirarchy similar to the Java package system. The component namespace is determined by the location of the component directory. For example, the component located at _&lt;approot&gt;/components/com/example/Hello_ would be instantiated as @new Component.com.example.Hello()@.
+- plugins := The _plugins_ directory is where the jQuery plugins and component mixins are located. For example, if there is a script _&lt;approot&gt;/plugins/script.js_, you would load it from your JS code as @$.require("script")@ or @var script = $.require("script")@, etc.
+- scripts := Scripts placed in the _scripts_ directory are evaled in the global scope when the app first loads on the client. This is done after the DOM is loaded but before any other app code is run. Use scripts in this directory for installing global functions and objects. (Not jQuery plugins!)
+- styles := The _styles_ directory is where global CSS files go. They provide app-wide styling options (components *can* override these global styles with their own local styles, however).
+
+Any other directories in the app root are considered to be global resources, and are accessible via the @$.golf.res@ object.
+
+h2(#special-files). Special Files
+
+Certain files, if present, have special significance to the Golf server. These files can be used to modify the way the Golf server operates. Additionally, there are a few files that are created by the Golf server's startup process, and removed when the server is shut down. Here is a comprehensive list of all of these special files.
+
+- forceclient.txt := The _forceclient.txt_ file, if present, tells the Golf server to force client mode for certain clients, based on the user agent string supplied in the initial request. This file should contain a list of regular expressions, one per line. Incoming requests will have the user agent string matched against each regular expression in the file. If the one of the regexes matches then the client will not be permitted to access the app in proxy mode. This means that this client will only be able to access the site with JS enabled. In the case that the client has disabled JS, they will see an error page requesting that they enable JS.
+- forceproxy.txt := The _forceproxy.txt_ file, if present, works like the _forceclient.txt_ file, except that user agents matching one of the regexps in the file will be automatically served in proxy mode. In this case no JS detection takes place. This this file has a higher priority than the _forceclient.txt_ file.
+- forcebot.txt := the _forcebot.txt_ file, if present, works like the _forceproxy.txt_ file, except that matching user agents are not only served in proxy mode, but additionally they are not sent presentation-only items, such as CSS. This streamlines the response while maintaining complete accessibility to content. This file has a higher priority than both the _forceclient.txt_ and _forceproxy.txt_ files.
+- components.js := The _components.js_ file is a temporary file created by the Golf server. It contains, more or less, a compiled version of the app. There's nothing configurable inside.
+- new.html := The _new.html_ file is created by the Golf server at runtime. It contains the HTML skeleton into which the Golf app is loaded. Don't mess with it, there isn't anything good you can do to it.
+- new.fc.html := The _new.fc.html_ file is created by the Golf server at runtime, also. Like the _new.html_ file, it contains an HTML skeleton page, but for clients that are not allowed to use proxy mode. Structurally it's the same, but the error message that is presented to the client if JS is disabled is different. Not much you want to do wtih this one either, so leave it alone.
+- error.html := The _error.html_ file, if present in the app root, will be sent in place of the standard Golf error page. It should be a complete HTML document. The tag @<%error%>@ in this file will be replaced with text describing the reason for the error.
+- head.html := The contents of the _head.html_ file, if present in the app root, are appended to the HTML skeleton page's @<head>@. This can be used to add metatags or tricky conditional css.
+- noscript.html := The _noscript.html_ file provides a way to customize the way the _new.html_ page looks to a client who disables JS after loading the app with JS enabled first. The _new.html_ page's @<noscript>@ tag's contents will be replaced with the contents of this file.
+- noscript.forceclient.html := The _noscript.forceclient.html_ file is analogous to the _noscript.html_ file, but it modifies the _new.fc.html_ file's appearance.
