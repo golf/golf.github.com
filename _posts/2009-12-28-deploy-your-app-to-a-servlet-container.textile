@@ -4,7 +4,7 @@ title: Deploy Your App To A Servlet Container
 author: Micha Niskin
 ---
 
-So you've built your app and tested it in development mode. Now you're ready to deploy it to a servlet container. Let's assume that your app root directory is named _golf-example_.
+So you've built your app, tested it in development mode, and now you're ready to deploy it to a servlet container. Let's assume that your app root directory is named _golf-example_.
 
 Open a terminal. In the app root directory do:
 
