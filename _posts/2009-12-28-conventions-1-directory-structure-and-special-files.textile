@@ -12,6 +12,6 @@ h2. Directory Structure
 
 Golf applications are contained in a single directory. This directory is what we call the _app root directory_. Inside this directory there are a number of (optional) subdirectories that have special significance.
 
-* *components* This directory contains all of the application's components. Within this directory is a heirarchy similar to the Java package system. The component namespace is determined by the location of the component directory. For example, the component located at _<approot>/components/com/example/Hello_ would be instantiated as @new Component.com.example.Hello()@.
+* *components* This directory contains all of the application's components. Within this directory is a heirarchy similar to the Java package system. The component namespace is determined by the location of the component directory. For example, the component located at _&lt;approot&gt;/components/com/example/Hello_ would be instantiated as @new Component.com.example.Hello()@.
 
 * *plugins* This is where the jQuery plugins and component mixins are located. For example, if there is a script @<approot>/plugins/script.js@, you would load it form your JS code as @$.require("script")@ or @var script = $.require("script")@, etc. (See "plugins":/plugins-extending-jquery-in-golf/ and "mixins":/mixins-extending-the-component-api/.)
