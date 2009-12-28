@@ -5,4 +5,14 @@ categories: [news]
 author: Micha Niskin
 ---
 
-Hi. This is the new site for all things Golf-related. In the next few days you should start seeing things happen. That is all!
+Hi. I ("micha":http://github.com/micha) will be working with Alan ("alandipert":http://github.com/alandipert), and Julio ("capotej":http://github.com/capotej) to develop some new features for the Golf framework.
+
+* *Documentation/Examples:* We'll be adding lots of example components and apps to this site, and we'll be finishing up the documentation shortly. Priority-one, so to speak.
+
+* *Tests:* We'll be adding lots of tests to the build process. This will improve the quality of releases and help us more easily integrate pull requests/patches from the community. We'll also be developing a tightly integrated test framework for app developers, too, to simplify and improve HTMLUnit based testing of Golf apps.
+
+* *Backend persistence middleware:* We're getting ready to add an exciting new way of dealing with object persistence in Golf. It will make dealing with the backend data requirements super easy and secure, and it will do it in a way that is designed from the ground up to be optimized for dynamic apps like Golf.
+
+* *Refactoring of server code:* We'll be separating the Golf JS proxy mechanism into a separate context server servlet. This will make it possible to host Golf apps on services like Google's App Engine.
+
+We're working toward a 1.0 release candidate in the near future. Anyone who wants to get involved is welcome. Fork it, hack something up, and send pull requests. Or just hit us up in "#golfdev":irc://irc.freenode.net/golfdev on freenode.net.
