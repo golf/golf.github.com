@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Conventions 1: Dierctory Structure And Special Files"
+title: "Conventions 1: Directory Structure And Special Files"
 author: Micha Niskin
 ---
 
@@ -14,7 +14,7 @@ Golf applications are contained in a single directory. This directory is what we
 
 * *components* The _components_ directory contains all of the application's components. Within this directory is a heirarchy similar to the Java package system. The component namespace is determined by the location of the component directory. For example, the component located at _&lt;approot&gt;/components/com/example/Hello_ would be instantiated as @new Component.com.example.Hello()@.
 
-* *plugins* The _plugins_ directory is where the jQuery plugins and component mixins are located. For example, if there is a script _&lt;approot&gt;/plugins/script.js_, you would load it form your JS code as @$.require("script")@ or @var script = $.require("script")@, etc.[1] 
+* *plugins* The _plugins_ directory is where the jQuery plugins and component mixins are located. For example, if there is a script _&lt;approot&gt;/plugins/script.js_, you would load it from your JS code as @$.require("script")@ or @var script = $.require("script")@, etc.[1] 
 
 * *scripts* Scripts placed in the _scripts_ directory are evaled in the global scope when the app first loads on the client. This is done after "domready" but before any other app code is run. Use scripts in this directory for installing global functions and objects. (Not jQuery plugins!)
 
