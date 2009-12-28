@@ -13,5 +13,8 @@ bc. mkdir components
 Next, we will create the _components/com/example/HelloWorld_ directory. This is similar to Java's package system; components in the _com/example/_ directory will be in the _com.example_ namespace.
 
 bc. mkdir -p components/com/example/HelloWorld
+cd components/com/example/HelloWorld
 
+The component is defined in an HTML file, _HelloWorld.html_. Create it with the following contents:
 
+bc..this is a resr
