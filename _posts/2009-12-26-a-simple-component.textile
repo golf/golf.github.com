@@ -10,27 +10,15 @@ This article goes past the simplistic "Hello, World":http://golf.github.com/hell
 
 h2. Create The Application Directory Structure
 
-Before we can start writing components we must first create the _components_ directory in the application root directory. This is the folder where all of the application's components must be located. Let's call our example application _golf-example_.
+Before we can start writing components we must first create some directories that our app will need. We want our directory to look like this:
 
-This is the overall directory structure we want:
-
-bc. golf-example/
+bc. + golf-example/
 |-- controller.js
-|-- components/
-    |-- HelloWorld/
-        |-- HelloWorld.html
+`-- components/
+    `-- HelloWorld/
+        `-- HelloWorld.html
 
-So let's do this.
-
-bc. mkdir golf-example
-cd golf-example
-mkdir components
-
-Next, we will create the _components/HelloWorld_ directory. This is the folder that will contain all of the files and resources for the @HelloWorld@ component.
-
-bc. mkdir components/HelloWorld
-
-Inside of the _components_ directory you can make subdirectories in a way similar to Java's package system. Placing a component in the _components/com/example_ directory will cause the component to be in the @com.example@ namespace. But for now we'll keep things simple and not worry about namespaces yet.
+When you have your app directory set up as above, open a terminal and change to the _golf-example_ directory.
 
 h2. Give The Component Some HTML, CSS, And JavaScript
 
