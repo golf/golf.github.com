@@ -13,7 +13,7 @@ Okay, great. From now on we'll refer to this directory as the _app directory_ or
 
 Now, Golf apps are built using the MVC (Model-View-Controller) architecture. The absolute minimal Golf app is a bare controller. Normally, an app would have views and models to deal with, but since this is just a "Hello, World" example we'll just hardcode everything into the controller.
 
-h2. A Simple Controller
+h2(#a-simple-controller). A Simple Controller
 
 The controller is defined in the special file _controller.js_, in the root of the app directory. This file is a JS source file, evaled in the global scope when the app is first loaded into the client.
 
@@ -31,7 +31,7 @@ $.golf.controller = [
 
 Here you can see we created a sort of catchall route, with the @route@ property set to the regex @.*@, matching any URI fragment and thus handling every request.
 
-h2. The Local Dev Server
+h2(#the-local-dev-server). The Local Dev Server
 
 Now let's start up the Golf server in local dev mode. In your terminal go to the app directory and do:
 
@@ -41,6 +41,6 @@ Open a browser and go to "http://localhost:4653/golf-example/#/home/":http://loc
 
 !/images/hello-world1.png!:/images/hello-world1.png
 
-h2. Disable JavaScript In Your Browser And Test The App
+h2(#disable-javascript-and-test). Disable JavaScript In Your Browser And Test The App
 
-Notice how the application remains accessible, regardless of whether JS is enabled, or not. The JS proxy mechanism that makes this possible is discussed in depth in the _Technical_ section of the docs.
+Notice how the application remains accessible, regardless of whether JS is enabled, or not. The JS proxy mechanism that makes this possible is discussed in depth in the "Technical":/#technical section of the docs.

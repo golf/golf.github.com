@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
 
@@ -17,44 +17,33 @@ h2(#news). Latest News "(extra)archive":/news.html
 
 h2(#getting-started). Getting Started "(extra)example apps":/example-apps.html
 
-  <ul class="toc">
-    <li><a href="/install-golf-on-your-workstation/">Install Golf On Your Workstation</a></li>
-    <li><a href="/hello-world-basic-usage-and-the-golf-dev-environment/">Hello, World: Basic Usage And The Golf Dev Environment</a></li>
-    <li><a href="/a-simple-component/">A Simple Component</a></li>
-    <li><a href="/deploy-your-app-to-a-servlet-container/">Deploy Your App To A Servlet Container</a></li>
-  </ul>
+# "Install Golf On Your Workstation":/install-golf-on-your-workstation/
+# "Hello, World: Basic Usage And The Golf Dev Environment":/hello-world-basic-usage-and-the-golf-dev-environment/
+# "A Simple Component":/a-simple-component/
+# "Deploy Your App To A Servlet Container":/deploy-your-app-to-a-servlet-container/
 
-  <h2>Common Tasks <a class="extra" href="/faq.html">more</a></h2>
+h2(#common-tasks). Common Tasks "(extra)more":/faq.html
 
-  <ul class="toc">
-    <li><a class="x" href="/app-entry-points-deep-linking-and-history-support/">App Entry Points, Deep Linking, And History Support</a></li>
-    <li><a class="x" href="/handling-post-data-and-forms/">Handling POST Data And Forms</a></li>
-    <li><a class="x" href="/communicating-with-a-backend-web-service/">Communicating With A Backend Web Service</a></li>
-    <li><a class="x" href="/known-issues-limitations/">Known Issues/Limitations</a></li>
-  </ul>
+# "(x)App Entry Points, Deep Linking, And History Support":/app-entry-points-deep-linking-and-history-support/
+# "(x)Handling POST Data And Forms":/handling-post-data-and-forms/
+# "(x)Communicating With A Backend Web Service":/communicating-with-a-backend-web-service/
+# "(x)Known Issues/Limitations":/known-issues-limitations/
 
-  <h2>Golf Reference</h2>
+h2(#golf-reference). Golf Reference
   
-  <ul class="toc">
-    <li><a href="/conventions-1-directory-structure-and-special-files/">Conventions 1: Directory Structure And Special Files</a></li>
-    <li><a class="x" href="/conventions-2-global-variables-and-reserved-names/">Conventions 2: Global Variables And Reserved Names</a></li>
-    <li><a class="x" href="/golfs-clientside-mvc-framework/">Golf's Clientside MVC Framework</a></li>
-    <li><a class="x" href="/the-golf-jquery-plugin-the-clientside-environment/">The Golf jQuery Plugin: The Clientside Environment</a></li>
-    <li><a class="x" href="/the-component-architecture/">The Component Architecture</a></li>
-    <li><a class="x" href="/plugins-extending-jquery-in-golf/">Plugins: Extending jQuery In Golf</a></li>
-    <li><a class="x" href="/mixins-extending-the-component-api/">Mixins: Extending The Component API</a></li>
-    <li><a class="x" href="/libraries-and-standalone-scripts/">Libraries And Standalone Scripts</a></li>
-  </ul>
+# "Conventions 1: Directory Structure And Special Files":/conventions-1-directory-structure-and-special-files/
+# "(x)Conventions 2: Global Variables And Reserved Names":/conventions-2-global-variables-and-reserved-names/
+# "(x)Golf's Clientside MVC Framework":/golfs-clientside-mvc-framework/
+# "(x)The Golf jQuery Plugin: The Clientside Environment":/the-golf-jquery-plugin-the-clientside-environment/
+# "(x)The Component Architecture":/the-component-architecture/
+# "(x)Plugins: Extending jQuery In Golf":/plugins-extending-jquery-in-golf/
+# "(x)Mixins: Extending The Component API":/mixins-extending-the-component-api/
+# "(x)Libraries And Standalone Scripts":/libraries-and-standalone-scripts/
 
-  <h2>Technical</h2>
+h2(#technical). Technical
   
-  <ul class="toc">
-    <li><a class="x" href="/how-javascript-proxying-works-in-golf/">How JavaScript Proxying Works In Golf</a></li>
-    <li><a class="x" href="/how-golf-detects-whether-javascript-is-enabled/">How Golf Detects Whether JavaScript Is Enabled</a></li>
-    <li><a class="x" href="/search-engine-optimization-and-golf-apps/">Search Engine Optimization And Golf Apps</a></li>
-    <li><a class="x" href="/security-and-golf-apps/">Security And Golf Apps</a></li>
-    <li><a class="x" href="/golf-server-architecture/">Golf Server Architecture</a></li>
-  </ul>
-
-</div>
-  
+# "(x)How JavaScript Proxying Works In Golf":/how-javascript-proxying-works-in-golf/
+# "(x)How Golf Detects Whether JavaScript Is Enabled":/how-golf-detects-whether-javascript-is-enabled/
+# "(x)Search Engine Optimization And Golf Apps":/search-engine-optimization-and-golf-apps/
+# "(x)Security And Golf Apps":/security-and-golf-apps/
+# "(x)Golf Server Architecture":/golf-server-architecture/

@@ -57,6 +57,7 @@ table {
 /*
 /*****************************************************************************/
 
+.site #home ol,
 ul.toc {
   margin-top: 1em;
   list-style-position: inside;
