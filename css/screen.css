@@ -219,3 +219,7 @@ img {
   border-top: 2px solid #eee;
   padding-top: 2em;
 }
+
+.x {
+  text-decoration: line-through;
+}
