@@ -14,11 +14,11 @@ Before we can start writing components we must first create the _components_ dir
 
 This is the overall directory structure we want:
 
-bc. +-- golf-example/
-    |-- controller.js
-    |-- components/
-        |-- HelloWorld/
-            |-- HelloWorld.html
+bc. golf-example/
+|-- controller.js
+|-- components/
+    |-- HelloWorld/
+        |-- HelloWorld.html
 
 So let's do this.
 
