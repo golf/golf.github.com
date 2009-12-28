@@ -72,6 +72,6 @@ Start up the Golf dev mode server, like this:
 
 bc. golf .
 
-Then, open a browser and navigate to 
+Then, open a browser and navigate to "http://localhost:4653/golf-example/#/home/":http://localhost:4653/golf-example/#/home/. You should see something similar to this:
 
-
+!/images/simple-component.png!:/images/simple-component.png
