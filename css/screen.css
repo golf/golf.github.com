@@ -156,6 +156,18 @@ img {
         border: 0;
       }
 
+.site dl {
+}
+
+  .site dl dt {
+    text-decoration: underline;
+  }
+
+  .site dl dd {
+    margin: 1em 0;
+    padding-left: 1.5em;
+  }
+
 /*****************************************************************************/
 /*
 /* Posts
