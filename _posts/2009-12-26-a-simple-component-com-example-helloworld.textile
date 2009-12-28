@@ -8,9 +8,11 @@ Golf _components_ are reusable, self contained units from which the MVC views ar
 
 h2. Create The Component Directory Structure
 
-Before we can start writing components we must first create the _components_ directory in the application root directory. This is the folder where all of the application's components must be located.
+Before we can start writing components we must first create the _components_ directory in the application root directory. This is the folder where all of the application's components must be located. Let's call our example application _golf-example_.
 
-bc. mkdir components
+bc. mkdir golf-example
+cd golf-example
+mkdir components
 
 Next, we will create the _components/com/example/HelloWorld_ directory.
 
@@ -36,7 +38,7 @@ The component is defined in an HTML file, _HelloWorld.html_. This is where the H
 
 Now all that remains is to write a simple controller for our application.
 
-Create the _controller.js_ file with these contents:
+Create the _controller.js_ file:
 
 {% highlight javascript linenos %}
 $.golf.controller = [
@@ -47,5 +49,15 @@ $.golf.controller = [
   }
 ];
 {% endhighlight %}
+
+Okay. Now it's time to test it out!
+
+h2. Test The Application In Dev Mode
+
+Start up the Golf dev mode server, like this:
+
+bc. golf .
+
+Then, open a browser and navigate to 
 
 
