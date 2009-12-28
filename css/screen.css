@@ -163,6 +163,13 @@ img {
     text-decoration: underline;
   }
 
+  .site dl dt a,
+  .site dl dt a:hover,
+  .site dl dt a:visited:hover {
+    text-decoration: inherit;
+    color: inherit;
+  }
+
   .site dl dd {
     margin: 1em 0;
     padding-left: 1.5em;
