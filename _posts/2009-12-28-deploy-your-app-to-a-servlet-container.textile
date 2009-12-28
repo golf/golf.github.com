@@ -10,4 +10,4 @@ Open a terminal. In the app root directory do:
 
 bc. golf --war .
 
-That will produce a war file (_golf-example.war_) in the app root directory. Upload that to your servlet container, and you're in business.
+That will produce a war file named _golf-example.war_ in the app root directory. Upload that to your servlet container, and you're in business.
