@@ -24,11 +24,17 @@ Inside of the _components_ directory you can make subdirectories in a way simila
 
 h2. Give The Component Some HTML, CSS, And JavaScript
 
-The component's structure and behavior is defined in an HTML file, _HelloWorld.html_. This is where the HTML, CSS, and JavaScript will be. Create the file _components/com/example/HelloWorld.html_, with the following contents:
+The component's structure and behavior is defined in an HTML file, _HelloWorld.html_. This file is located in the _HelloWorld_ directory and is where the HTML, CSS, and JavaScript for the component will be. If your component requires resources like images, for example, they would go in a directory named _HelloWorld.res_ in the _HelloWorld_ folder. For now we won't worry about component resources, though.
+
+Create the file _components/HelloWorld/HelloWorld.html_, with the following contents:
 
 {% highlight html linenos %}
 <div>
-  <style type="text/golf"></style>
+  <style type="text/golf">
+    div.container {
+      border: 1px solid red;
+    }
+  </style>
   <script type="text/golf">
     function() {
       $(".container").append("<h1>Hello, world!</h1>");
@@ -38,7 +44,9 @@ The component's structure and behavior is defined in an HTML file, _HelloWorld.h
 </div>
 {% endhighlight %}
 
-Now all that remains is to write a simple controller for our application.
+Notice how the component HTML markup is acting as a sort of template, into which the content is inserted by jQuery. This is a powerful pattern. The Golf server's JS proxy capability allows us to leverage this to the fullest. For now, though, our app is almost finished. All that remains is to write a simple controller.
+
+h2. Write The Controller
 
 Create the _controller.js_ file:
 
@@ -46,13 +54,17 @@ Create the _controller.js_ file:
 $.golf.controller = [
   { route: ".*",
     action: function(container, params) {
-      container.empty().append(new Component.com.example.HelloWorld());
+      container.empty().append(new Component.HelloWorld());
     }
   }
 ];
 {% endhighlight %}
 
-Okay. Now it's time to test it out!
+Note the @Component@ namespace that our component is in. This is true of all components. If we had created our component in the _components/com/example_ directory instead of just the _components_ directory, we would have needed to instantiate it like this:
+
+bc. new Component.com.example.HelloWorld()
+
+But we're keeping things simeple for now. Okay! It's time to test it out!
 
 h2. Test The Application In Dev Mode
 
