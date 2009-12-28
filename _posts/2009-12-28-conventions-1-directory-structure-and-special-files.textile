@@ -6,7 +6,7 @@ author: Micha Niskin
 
 Golf provides a fairly complex and flexible framework in which to build and deploy your web applications. One of the overriding design goals has been to simplify app development as much as possible.
 
-In order to reduce the amount of time spent editing configuration files we chose _convention_ over _configuration_. Golf aims to provide a very consistent and predictable set of conventions.
+In order to reduce the amount of time spent editing configuration files we chose _convention_ over _configuration_. Golf aims to provide a very consistent and predictable set of conventions and consistent, sensible defaults.
 
 h2. Directory Structure
 
@@ -14,4 +14,6 @@ Golf applications are contained in a single directory. This directory is what we
 
 * *components* This directory contains all of the application's components. Within this directory is a heirarchy similar to the Java package system. The component namespace is determined by the location of the component directory. For example, the component located at _&lt;approot&gt;/components/com/example/Hello_ would be instantiated as @new Component.com.example.Hello()@.
 
-* *plugins* This is where the jQuery plugins and component mixins are located. For example, if there is a script @<approot>/plugins/script.js@, you would load it form your JS code as @$.require("script")@ or @var script = $.require("script")@, etc. (See "plugins":/plugins-extending-jquery-in-golf/ and "mixins":/mixins-extending-the-component-api/.)
+* *plugins* This is where the jQuery plugins and component mixins are located. For example, if there is a script _&lt;approot&gt;/plugins/script.js_, you would load it form your JS code as @$.require("script")@ or @var script = $.require("script")@, etc. (See "plugins":/plugins-extending-jquery-in-golf/ and "mixins":/mixins-extending-the-component-api/.)
+
+* *scripts* 

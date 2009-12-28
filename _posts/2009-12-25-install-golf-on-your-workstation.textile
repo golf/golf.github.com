@@ -11,4 +11,4 @@ Now you can open a terminal and do:
 
 bc. golf --help
 
-This will print the Golf command line usage and options page.
+This will print the Golf command line usage and options.

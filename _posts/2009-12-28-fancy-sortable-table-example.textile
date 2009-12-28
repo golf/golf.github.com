@@ -1,0 +1,9 @@
+---
+layout: example
+author: Micha Niskin
+categories: [examples]
+title: Fancy Sortable Table Example
+description: Displays some tabular data in a fancy dynamic JavaScript sort of way.
+link: 'http://github.com/micha/golf-example-app'
+---
+
