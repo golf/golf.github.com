@@ -1,0 +1,8 @@
+---
+layout: post
+title: New Features Planned For Golf
+categories: [news]
+author: Micha Niskin
+---
+
+Hi. This is the new site for all things Golf-related. In the next few days you should start seeing things happen. That is all!
