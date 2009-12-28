@@ -3,24 +3,19 @@ layout: default
 title: Home
 ---
 
-<div id="home">
+Golf is a web application server. It provides a way to build and deploy JavaScript (JS) driven webapps without sacrificing accessibility to JS-disabled browsers. By making dynamic, JS generated content fully accessible, Golf apps are designed from the ground up as clientside applications, and take advantage of a powerful, rich JS runtime environment. "More...":/overview/
 
-  <p>Golf is a web application server. It provides a way to build and
-  deploy JavaScript (JS) driven webapps without sacrificing accessibility
-  to JS-disabled browsers. By making dynamic, JS generated content fully
-  accessible, Golf apps are designed from the ground up as clientside
-  applications, and take advantage of a powerful, rich JS runtime
-  environment. <a href="/overview/">More...</a></p>
+h2(#news). Latest News "(extra)archive":/news.html
 
-  <h2>Latest News <a class="extra" href="/news.html">archive</a></h2>
-
+<notextile>
   <ul class="posts toc">
     {% for post in site.categories.news limit:3 %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
+</notextile>
 
-  <h2>Getting Started <a class="extra" href="/example-apps.html">example apps</a></h2>
+h2(#getting-started). Getting Started "(extra)example apps":/example-apps.html
 
   <ul class="toc">
     <li><a href="/install-golf-on-your-workstation/">Install Golf On Your Workstation</a></li>
