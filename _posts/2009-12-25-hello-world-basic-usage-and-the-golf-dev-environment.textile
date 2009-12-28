@@ -37,7 +37,7 @@ Now let's start up the Golf server in local dev mode. In your terminal go to the
 
 bc. golf .
 
-Open a browser and go to "http://localhost:4653/golf-example/":http://localhost:4653/golf-example/. You should see something like this:
+Open a browser and go to "http://localhost:4653/golf-example/#/home/":http://localhost:4653/golf-example/#/home/. You should see something like this:
 
 !/images/hello-world1.png!:/images/hello-world1.png
 
