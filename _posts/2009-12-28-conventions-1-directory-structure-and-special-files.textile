@@ -10,7 +10,7 @@ In order to reduce the amount of time spent editing configuration files we chose
 
 h2. Directory Structure
 
-Golf applications are contained in a single directory. This directory is what we call the _app root directory_. Inside this directory there are a number of (optional) subdirectories that have special significance.
+Golf applications are contained in a single directory. This directory is what we call the _app root_ directory. Inside this directory there are a number of (optional) subdirectories that have special significance.
 
 - components := The _components_ directory contains all of the application's components. Within this directory is a heirarchy similar to the Java package system. The component namespace is determined by the location of the component directory. For example, the component located at _&lt;approot&gt;/components/com/example/Hello_ would be instantiated as @new Component.com.example.Hello()@.
 - plugins := The _plugins_ directory is where the jQuery plugins and component mixins are located. For example, if there is a script _&lt;approot&gt;/plugins/script.js_, you would load it from your JS code as @$.require("script")@ or @var script = $.require("script")@, etc.[1] 
@@ -21,7 +21,7 @@ Any other directories in the app root are considered to be global resources, and
 
 h2. Special Files
 
-Certain files, if present, have special significance to the Golf server. These files can be used to modify the way the Golf server operates. Additionally, there are a few files that are created by the Golf server's startup process, and removed at when the server is shut down. Here is a comprehensive list of all of these special files.
+Certain files, if present, have special significance to the Golf server. These files can be used to modify the way the Golf server operates. Additionally, there are a few files that are created by the Golf server's startup process, and removed when the server is shut down. Here is a comprehensive list of all of these special files.
 
 - forceclient.txt := The _forceclient.txt_ file, if present, tells the Golf server to force client mode for certain clients, based on the user agent string supplied in the initial request. This file should contain a list of regular expressions, one per line. Incoming requests will have the user agent string matched against each regular expression in the file. If the one of the regexes matches then the client will not be permitted to access the app in proxy mode. This means that this client will only be able to access the site with JS enabled. In the case that the client has disabled JS, they will see an error page requesting that they enable JS.
 - forceproxy.txt := The _forceproxy.txt_ file, if present, works like the _forceclient.txt_ file, except that user agents matching one of the regexps in the file will be automatically served in proxy mode. In this case no JS detection takes place. This this file has a higher priority than the _forceclient.txt_ file.
