@@ -8,7 +8,7 @@ Golf _components_ are reusable, self contained units from which the MVC views ar
 
 This article goes past the simplistic "Hello, World":http://golf.github.com/hello-world-basic-usage-and-the-golf-dev-environment/ example, and demonstrates a simple MVC view and controller. The model is left as an exercise for a later article.
 
-h2. Create The Component Directory Structure
+h2. Create The Application Directory Structure
 
 Before we can start writing components we must first create the _components_ directory in the application root directory. This is the folder where all of the application's components must be located. Let's call our example application _golf-example_.
 
@@ -16,13 +16,13 @@ bc. mkdir golf-example
 cd golf-example
 mkdir components
 
-Next, we will create the _components/com/example/HelloWorld_ directory.
+Next, we will create the _components/HelloWorld_ directory. This is the folder that will contain all of the component resources.
 
-bc. mkdir -p components/com/example/HelloWorld
+bc. mkdir components/HelloWorld
 
-This is similar to Java's package system; components in the _com/example/_ directory will be in the _com.example_ namespace.
+Inside of the _components_ directory you can make subdirectories in a way similar to Java's package system. Placing a component in the _components/com/example_ directory will cause the component to be in the _com.example_ namespace. But for now we'll keep things simple and not worry about namespaces yet.
 
-h2. Give The Component Some HTML And JavaScript, And Write A Controller
+h2. Give The Component Some HTML, CSS, And JavaScript
 
 The component is defined in an HTML file, _HelloWorld.html_. This is where the HTML, CSS, and JavaScript will be. Create the file _components/com/example/HelloWorld.html_, with the following contents:
 
