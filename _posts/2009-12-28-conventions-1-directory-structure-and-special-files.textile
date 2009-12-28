@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Conventions 1: Dierctory Structure And Special Files"
+author: Micha Niskin
+---
+
+Golf provides a fairly complex and flexible framework in which to build and deploy your web applications. One of the overriding design goals, however, has been to simplify app development as much as possible. Thus, we chose convention over configuration pretty much whenever there was a choice to be made. Consistency, on the other hand, is key. Golf aims to provide a very consistent and predictable set of conventions.
+
+h2. Directory Structure
+
+blah.
