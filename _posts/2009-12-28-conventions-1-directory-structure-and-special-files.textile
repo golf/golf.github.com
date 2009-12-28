@@ -10,4 +10,6 @@ In order to reduce the amount of time spent editing configuration files we chose
 
 h2. Directory Structure
 
-blah.
+Golf applications are contained in a single directory. This directory is what we call the _app root directory_. Inside this directory there are a number of (optional) subdirectories that have special significance.
+
+* @<approot>/components@ This directory contains all of the application's components.
