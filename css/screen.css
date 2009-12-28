@@ -38,7 +38,7 @@ a {
   color: #22a;
 }
 
-a:hover, a:visited:hover {
+a:hover, a:visited:hover, a:hover span.new, a:visited:hover span.new {
   color: black;
 }
 
@@ -242,4 +242,8 @@ img {
 
 .x {
   text-decoration: line-through;
+}
+
+span.new {
+  color: #eaa;
 }
