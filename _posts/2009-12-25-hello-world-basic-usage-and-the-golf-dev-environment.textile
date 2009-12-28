@@ -43,4 +43,4 @@ Open a browser and go to "http://localhost:4653/golf-example/":http://localhost:
 
 h2. Disable JavaScript In Your Browser And Test The App
 
-Notice how the application remains accessible, regardless of whether JS is enabled, or not. The JS proxy mechanism that makes this possible is discussed in depth in the "Technical" section of the docs.
+Notice how the application remains accessible, regardless of whether JS is enabled, or not. The JS proxy mechanism that makes this possible is discussed in depth in the _Technical_ section of the docs.

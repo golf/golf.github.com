@@ -10,6 +10,16 @@ h2. Create The Component Directory Structure
 
 Before we can start writing components we must first create the _components_ directory in the application root directory. This is the folder where all of the application's components must be located. Let's call our example application _golf-example_.
 
+bc. -- golf-example/
+    |-- controller.js
+    |-- components/
+        |-- com/
+            |-- example/
+                |-- HelloWorld/
+                    |-- HelloWorld.html
+                    |-- HelloWorld.res/
+                        |-- hello.jpg
+
 bc. mkdir golf-example
 cd golf-example
 mkdir components
