@@ -22,7 +22,7 @@ h2(#getting-started). Getting Started
 # "A Simple Component":/examples/a-simple-component/
 # "Deploy Your App To A Servlet Container":/deploy-your-app-to-a-servlet-container/
 
-h2(#common-tasks). Common Tasks "(extra)example apps":/example-apps.html
+h2(#common-tasks). Common Tasks "(extra)examples":/example-apps.html
 
 # "(x)Referencing Files On The Server":/referencing-files-on-the-server/
 # "(x)App Entry Points, Deep Linking, And History Support":/app-entry-points-deep-linking-and-history-support/
