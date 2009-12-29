@@ -24,6 +24,7 @@ h2(#getting-started). Getting Started "(extra)example apps":/example-apps.html
 
 h2(#common-tasks). Common Tasks "(extra)more":/faq.html
 
+# "(x)Referencing Files On The Server":/referencing-files-on-the-server/
 # "(x)App Entry Points, Deep Linking, And History Support":/app-entry-points-deep-linking-and-history-support/
 # "Handling POST Data And Forms":/examples/handling-post-data-and-forms/
 # "(x)Communicating With A Backend Web Service":/communicating-with-a-backend-web-service/
@@ -36,6 +37,7 @@ h2(#golf-reference). Golf Reference
 # "(x)Golf's Clientside MVC Framework":/golfs-clientside-mvc-framework/
 # "(x)The Golf jQuery Plugin: The Clientside Environment":/the-golf-jquery-plugin-the-clientside-environment/
 # "(x)The Component Architecture":/the-component-architecture/
+# "(x)App And Component Resources":/app-and-component-resources/
 # "(x)Plugins: Extending jQuery In Golf":/plugins-extending-jquery-in-golf/
 # "(x)Mixins: Extending The Component API":/mixins-extending-the-component-api/
 # "(x)Libraries And Standalone Scripts":/libraries-and-standalone-scripts/
