@@ -156,9 +156,6 @@ img {
         border: 0;
       }
 
-.site dl {
-}
-
   .site dl dt {
     text-decoration: underline;
   }
@@ -201,16 +198,39 @@ img {
   #post code {
     border: 1px solid #ddd;
     background-color: #eef;
-    font-size: 85%;
+    font-size: 95%;
     padding: 0.2em;
   }
+
+    #post p code {
+      font-size: 100%;
+    }
+
+    #post .nounderline dl dt {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #post dl dt code {
+      background-color: white;
+      border: none;
+      text-decoration: none;
+      font-size: 100%;
+    }
+
+    #post dl span.type {
+      text-decoration: none;
+      font-size: 100%;
+      font-weight: normal;
+      color: #444;
+    }
 
     #post pre code {
       border: none;
     }
 
   #post .highlight {
-    font-size: 85%;
+    font-size: 95%;
   }
 
   /* terminal */

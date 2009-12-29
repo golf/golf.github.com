@@ -4,3 +4,29 @@ title: "Conventions 2: Global Variables And Reserved Names"
 author: Micha Niskin
 ---
 
+The Golf JavaScript environment includes a number of global variables and functions. Additionally, the Golf framework requires exclusive use of certain CSS class names and/or ids. And finally, there are a few naming conventions which should be kept in mind when developing Golf apps.
+
+h2(#global-variables). Global Variables
+
+These variables are defined in the global scope, and initialized before any other code is run (including jQuery itself). This means that JS code in controllers, plugins, libraries, and components will all have access to them.
+
+<div class="nounderline">
+- %(type)&lt;bool&gt;% @serverside@ := This variable is @true@ when the app is running in proxy mode (i.e. client does not have JS enabled, and the page is being rendered on the server). This is useful, e.g. when you want to provide separate implementations for JS and no-JS clients.
+- %(type)&lt;string&gt;% @sessionid@ := The session id string for the the Golf servlet session.
+- %(type)&lt;string&gt;% @servletUrl@ := The URL of the Golf servlet. Since Golf apps never reload the page, this is like a base URL. You navigate around the app by setting the URL _hash_, or _fragment_.
+- %(type)&lt;string&gt;% @urlHash@ := This is the initial request URL hash. Most of the time this will be an empty string, however in some rare cases it is not. It's used internally during the bootstrapping process.
+- %(type)&lt;bool&gt;% @devmode@ := This variable is @true@ when app is running in local development mode.
+- %(type)&lt;bool&gt;% @forcebot@ := This variable is @true@ if the Golf container is running the app in "forcebot":/conventions-1-directory-structure-and-special-files/#special-files mode.
+- %(type)&lt;bool&gt;% @forceproxy@ := This variable is @true@ if the Golf container is running the app in "forceproxy":/conventions-1-directory-structure-and-special-files/#special-files mode.
+- %(type)&lt;bool&gt;% @forceclient@ := This variable is @true@ if the Golf container is running the app in "forceclient":/conventions-1-directory-structure-and-special-files/#special-files mode.
+- %(type)&lt;string[]&gt;% @restBackends@ := This variable is an array of strings--each string corresponding to a backend servlet that has been loaded into the servlet container.
+- %(type)&lt;string&gt;% @cloudfrontDomain@ := The Amazon Cloud Front domain name for an AWS deployed app. It's used internally.
+
+h2(#global-functions). Global Functions
+
+These are the global JS functions, classes and constructors.
+
+- %(type)&lt;null&gt;% @d(@ %(type)&lt;string&gt;% @)@ := Print debugging output to the console.
+- @Component@ := asdf
+
+</div>
