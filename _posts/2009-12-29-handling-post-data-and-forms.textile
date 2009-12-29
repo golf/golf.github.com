@@ -1,7 +1,61 @@
 ---
-layout: post
+layout: example
+categories: [examples]
 title: Handling POST Data And Forms
 author: Micha Niskin
+repo: 'http://github.com/golf/golf-example/tree/handling-post-data-and-forms'
+zip: 'http://github.com/golf/golf-example/zipball/handling-post-data-and-forms'
 ---
 
-Golf applications handle form submissions in a very simple and straightforward way. Form data is handled in your JS code, via a regular @onsubmit@ event handler.
+Golf applications handle form submissions in a very simple and straightforward way. Form data is handled in your JS code, via a regular _onsubmit_ event handler. To illustrate the technique we will construct a simple application and name it, say, _golf-example_.
+
+We will make a component in which we will create the form. Let's call the component _FormExample_. The _FormExample.html_ file should contain the following:
+
+{% highlight html %}
+<div>
+  <style type="text/golf">
+  </style>
+  <script type="text/golf">
+    function() {
+      $("form").submit(
+        function() {
+          $("span").text($("input[name='info']").select().val());
+          return false;
+        }
+      );
+    }
+  </script>
+  <h2>Form Example</h2>
+  <p>You entered '<span></span>'.</p>
+  <form>
+    <input type="text" name="info"/>
+    <input type="submit"/>
+  </form>
+</div>
+{% endhighlight %}
+
+Notice where the actual handling of the form is taking place, right in the JS event handler. Normally you might be doing an AJAX call at this point, perhaps, but for the purposes of this example we simply update the DOM with the submitted form data.
+
+*Also, don't forget to return @false@ from your _onsubmit_ handler!* If you forget this the form will actually be submitted, causing the page to reload and prevent the JS handler from working.
+
+Now, in order to make this an app we will also need a controller, of course. Create a simple _controller.js_ file with the following contents:
+
+{% highlight javascript %}
+$.golf.controller = [
+  { route: ".*",
+    action: function(container, params) {
+      container.empty().append(new Component.FormExample());
+    }
+  }
+];
+{% endhighlight %}
+
+Now start the Golf server in local dev mode. Open a terminal and go to the _golf-example_ directory. Then do
+
+bc. golf .
+
+Open a browser window and navigate to "http://localhost:4653/golf-example/#/home/":http://localhost:4653/golf-example/#/home/. You should see something like this:
+
+!/images/post-data-and-forms.png!:/images/post-data-and-forms.png
+
+Try submitting the form with and without JS enabled in your browser. It should do the same thing either way. You can also try setting the @method@ attribute of the form element to @post@, and trying it that way. It works in both regular and proxy modes in either case.

@@ -18,14 +18,14 @@ h2(#news). Latest News "(extra)archive":/news.html
 h2(#getting-started). Getting Started "(extra)example apps":/example-apps.html
 
 # "Install Golf On Your Workstation":/install-golf-on-your-workstation/
-# "Hello, World: Basic Usage And The Golf Dev Environment":/hello-world-basic-usage-and-the-golf-dev-environment/
-# "A Simple Component":/a-simple-component/
+# "Hello, World: Basic Usage And The Golf Dev Environment":/examples/hello-world-basic-usage-and-the-golf-dev-environment/
+# "A Simple Component":/examples/a-simple-component/
 # "Deploy Your App To A Servlet Container":/deploy-your-app-to-a-servlet-container/
 
 h2(#common-tasks). Common Tasks "(extra)more":/faq.html
 
 # "(x)App Entry Points, Deep Linking, And History Support":/app-entry-points-deep-linking-and-history-support/
-# "(x)Handling POST Data And Forms":/handling-post-data-and-forms/
+# "Handling POST Data And Forms":/examples/handling-post-data-and-forms/
 # "(x)Communicating With A Backend Web Service":/communicating-with-a-backend-web-service/
 # "(x)Known Issues/Limitations":/known-issues-limitations/
 

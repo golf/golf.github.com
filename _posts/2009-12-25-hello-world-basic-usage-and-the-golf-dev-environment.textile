@@ -1,7 +1,10 @@
 ---
-layout: post
+layout: example
 title: "Hello, World: Basic Usage And The Golf Dev Environment"
 author: Micha Niskin
+categories: [examples]
+repo: 'http://github.com/golf/golf-example/tree/hello-world'
+zip: 'http://github.com/golf/golf-example/zipball/hello-world'
 ---
 
 So, now it's time to make a simple, "Hello, World" type of application to get started with Golf. The first thing is to create a directory in which to place all of the files that will make up your Golf app.
@@ -19,7 +22,7 @@ The controller is defined in the special file _controller.js_, in the root of th
 
 Create the _controller.js_ file with the following contents:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 $.golf.controller = [
   { route: ".*",
     action: function(container, params) {

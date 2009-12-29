@@ -1,7 +1,10 @@
 ---
-layout: post
+layout: example
 title: "A Simple Component"
 author: Micha Niskin
+categories: [examples]
+repo: 'http://github.com/golf/golf-example/tree/simple-component'
+zip: 'http://github.com/golf/golf-example/zipball/simple-component'
 ---
 
 Golf _components_ are reusable, self contained units from which the MVC views are built. Components are constructed from regular HTML, CSS, and JS. They are instantiated in your JS code and inserted into the DOM using jQuery.
@@ -26,7 +29,7 @@ The component's structure and behavior is defined in an HTML file, _HelloWorld.h
 
 Create the file _components/HelloWorld/HelloWorld.html_, with the following contents:
 
-{% highlight html linenos %}
+{% highlight html %}
 <div>
   <style type="text/golf">
     div.container {
@@ -48,7 +51,7 @@ h2. Write The Controller
 
 Create the _controller.js_ file:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 $.golf.controller = [
   { route: ".*",
     action: function(container, params) {

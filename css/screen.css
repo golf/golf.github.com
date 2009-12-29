@@ -114,6 +114,7 @@ img {
   }
 
   .site #home a.extra,
+  .site #post a.extra,
   .site .title a.extra {
     color: #aaa;
     text-decoration: none;
@@ -121,6 +122,7 @@ img {
   }
 
   .site #home a.extra:hover,
+  .site #post a.extra:hover,
   .site .title a.extra:hover {
     color: black;
   }

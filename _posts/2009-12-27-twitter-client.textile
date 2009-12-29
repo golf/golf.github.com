@@ -3,7 +3,8 @@ layout: example
 author: Julio Capote
 categories: [examples]
 title: Twitter Client
-description: Client for the twitter.com API. Enter a search term into the form, submit, and see the latest tweets!
-link: 'http://github.com/capotej/golf-twitter-app'
+repo: 'http://github.com/capotej/golf-twitter-app'
+zip: 'http://github.com/capotej/golf-twitter-app/zipball/master'
 ---
 
+Client for the twitter.com API. Enter a search term into the form, submit, and see the latest tweets!
