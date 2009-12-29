@@ -1,0 +1,7 @@
+---
+layout: post
+title: Handling POST Data And Forms
+author: Micha Niskin
+---
+
+Golf applications handle form submissions in a very simple and straightforward way. Form data is handled in your JS code, via a regular @onsubmit@ event handler.
