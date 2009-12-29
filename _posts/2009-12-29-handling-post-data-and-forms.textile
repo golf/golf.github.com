@@ -9,7 +9,7 @@ zip: 'http://github.com/golf/golf-example/zipball/handling-post-data-and-forms'
 
 Golf applications handle form submissions in a very simple and straightforward way. Form data is handled in your JS code, via a regular _onsubmit_ event handler. To illustrate the technique we will construct a simple application and name it, say, _golf-example_.
 
-We will make a component in which we will create the form. Let's call the component _FormExample_. The _FormExample.html_ file should contain the following:
+We will make a component in which we will create the form (see "A Simple Component":/examples/a-simple-component/). Let's call the component _FormExample_. The _FormExample.html_ file should contain the following:
 
 {% highlight html %}
 <div>
