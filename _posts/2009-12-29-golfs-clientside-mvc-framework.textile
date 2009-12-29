@@ -1,0 +1,36 @@
+---
+layout: post
+title: "Golf's Clientside MVC Framework"
+author: Micha Niskin
+---
+
+Golf apps are built on a simple, straightforward MVC architecture. Requests are delegated to a _controller_. The controller selects the corresponding _route_ (or routes) and passes the request off to the associated _action_. The action then calls up the appropriate _view_ and inserts it into the DOM.
+
+At this point there are two main patterns to consider. One way is to fetch data from the _model_ from within the view code. Since the model is a remote webservice of some kind, this sometimes makes good sense. Another way is to fetch the data in the controller, and pass it to the view as arguments in the constructor. This makes sense when your data is of a general nature and you want to package a more generic view for later reuse.
+
+h2(#mvc-in-the-context-of-golf). MVC In The Context Of Golf
+
+We can see that Golf provides a relatively standard MVC pattern. The models, views, and controller, in the context of Golf, are:
+
+- models := The _models_ are JavaScript objects that "interact with a backend webservice":/communicating-with-a-backend-web-service/.
+- views := The _views_ are "Golf components":/the-component-architecture/.
+- controller := The _controller_ is configured in the _controller.js_ file.
+
+h2(#the-controller). The Controller
+
+The main topic of this article is really the configuration of the app's controller. Views and models are covered in detail elsewhere (see above).
+
+The actual controller code is deep within the Golf runtime. When you develop apps you configure it, similar to a "sinatra":http://www.sinatrarb.com/ app. When a request comes in, the controller looks for the @$.golf.controller@ array. This array must be set in the _controller.js_ source file in your app.
+
+A simple _controller.js_ file may look like this:
+
+{% highlight javascript %}
+$.golf.controller = [
+  { route: ".*",
+    action: function(container, params) {
+      var arg = params[0];
+      container.empty().append(new Component.com.example.Test(arg));
+    }
+  }
+];
+{% endhighlight %}

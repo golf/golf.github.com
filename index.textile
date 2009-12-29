@@ -34,7 +34,7 @@ h2(#golf-reference). Golf Reference
   
 # "Conventions 1: Directory Structure And Special Files":/conventions-1-directory-structure-and-special-files/
 # "Conventions 2: Global Variables And Reserved Names":/conventions-2-global-variables-and-reserved-names/
-# "(x)Golf's Clientside MVC Framework":/golfs-clientside-mvc-framework/
+# "Golf's Clientside MVC Framework":/golfs-clientside-mvc-framework/
 # "(x)The Golf jQuery Plugin: The Clientside Environment":/the-golf-jquery-plugin-the-clientside-environment/
 # "(x)The Component Architecture":/the-component-architecture/
 # "(x)App And Component Resources":/app-and-component-resources/
