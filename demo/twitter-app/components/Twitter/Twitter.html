@@ -1,0 +1,41 @@
+<div>
+
+  <style type="text/golf">
+  </style>
+
+  <script type="text/golf">
+    function() {
+      $.require("jquery.tweet");
+
+      var tweetItUp = function(username, count) {
+        $(".twitter_component").empty().tweet({
+          username: username,
+          count: count
+        });
+        $(".searched ul").prepend("<li>"+username+"</li>");
+      };
+
+      $("form").submit(function(){
+        tweetItUp($("input[name='username']").val(), 30);
+        return false;
+      });
+
+      tweetItUp("golf", 30);
+    }
+  </script>
+
+  <form>
+    <p>username</p>
+    <input type="text" name="username" />
+    <input type="submit" />
+  </form>
+
+  <div class="searched">
+    <h3>Previous Searches</h3>
+    <ul></ul>
+  </div>
+
+  <div class="twitter_component">
+  </div>
+
+</div>

@@ -1,0 +1,33 @@
+<project name="golfproject" default="static">
+  <target name="static" description="Compile static app.">
+    <!-- Compile static app -->
+    <unzip src="/var/folders/Kz/Kz1mJ4NiGyC1SMfutzGZKU+++TI/-Tmp-/golf_deploy.7185660629018034796.zip" dest="/Users/micha/src/checkout/golf.github.com/demo/twitter-app/"/>
+    <copy todir="/Users/micha/src/checkout/golf.github.com/demo/twitter-app/">
+      <fileset dir=".">
+        <exclude name=".git/**"/>
+        <exclude name=".gitignore"/>
+        <exclude name="**/*.swp"/>
+        <exclude name="**/*.swo"/>
+        <exclude name="**/*~"/>
+      </fileset>
+    </copy>
+    <move file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//new.html" tofile="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//index.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//new.fc.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//error.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//forcebot.txt"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//forceproxy.txt"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//forceclient.txt"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//__WEB.XML__"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//head.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//jsdetect.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//loading.gif"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//new.static.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//noscript.forceclient.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//noscript.static.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//noscript.html"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//proxy_project.xml"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//proxy_web.xml"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//static_project.xml"/>
+    <delete file="/Users/micha/src/checkout/golf.github.com/demo/twitter-app//version"/>
+  </target>
+</project>
