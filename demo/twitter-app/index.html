@@ -14,6 +14,9 @@
       window.forceclient      = false;
       window.restBackends     = [];
       window.cloudfrontDomain = "";
+      if (servletUrl.match("/index\.html$"))
+        window.location.replace(
+          servletUrl.substring(0, servletUrl.length - "index.html".length));
     </script>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="jquery.address.js"></script>
