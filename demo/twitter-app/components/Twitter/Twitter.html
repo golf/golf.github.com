@@ -1,41 +1,90 @@
 <div>
 
   <style type="text/golf">
+    .component {
+      font-family: sans-serif;
+      position: relative;
+      margin: 0 auto;
+      width: 960px;
+    }
+    .left {
+      float: left;
+      width: 260px;
+    }
+    .right {
+      float: left;
+      width: 700px;
+    }
+    .twitter_component ul {
+      list-style-type: none;
+      border-left: 2px solid #aaa;
+    }
+    .twitter_component ul li {
+      padding: 0.5em;
+    }
+    .twitter_component ul li:even {
+      background: #eee;
+    }
   </style>
+
+  <script type="text/javascript">
+      $.golf.controller.push(
+        { route: "^/search/(.*)/$",
+          action: (function() {
+            var tweet;
+            return function(container, params) {
+              tweet = !!tweet ? tweet : new Component.Twitter();
+              container.empty().append(tweet);
+              tweet.load(params[1]);
+            };
+          })()
+        }
+      );
+  </script>
 
   <script type="text/golf">
     function() {
-      $.require("jquery.tweet");
+      var searched = [];
 
-      var tweetItUp = function(username, count) {
-        $(".twitter_component").empty().tweet({
-          username: username,
-          count: count
+      this.load = function(search) {
+        $("form").submit(function(){
+          $.golf.location("/search/"+$("input[name='username']").val()+"/");
+          return false;
         });
-        $(".searched ul").prepend("<li>"+username+"</li>");
+
+        $(".twitter_component").empty().tweet({
+          loading_text: "Loading...",
+          username: search,
+          count: 30
+        });
+
+        if ($.inArray(search, searched) < 0) {
+          $(".searched ul")
+            .prepend("<li><a href='#/search/"+search+"/'>"+search+"</li>");
+          searched.push(search);
+        }
+
+        $("input[name='username']").val(search).select();
       };
-
-      $("form").submit(function(){
-        tweetItUp($("input[name='username']").val(), 30);
-        return false;
-      });
-
-      tweetItUp("golf", 30);
     }
   </script>
 
-  <form>
-    <p>username</p>
-    <input type="text" name="username" />
-    <input type="submit" />
-  </form>
+  <div class="left">
+    <h3>Twitter Search</h3>
+    <form>
+      <input type="text" name="username" />
+      <input type="submit" value="search" />
+    </form>
 
-  <div class="searched">
-    <h3>Previous Searches</h3>
-    <ul></ul>
+    <div class="searched">
+      <h4>Previous Searches</h4>
+      <ul></ul>
+    </div>
   </div>
 
-  <div class="twitter_component">
+  <div class="right">
+    <h3>Results</h3>
+    <div class="twitter_component"></div>
   </div>
 
 </div>

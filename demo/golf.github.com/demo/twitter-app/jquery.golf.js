@@ -16,12 +16,7 @@ function Debug(prefix) {
 }
 
 function $local(selector, root) {
-  return $(root)
-            .find("*")
-            .andSelf()
-            .filter(selector)
-            .not($(".component *", root).get())
-            .not($("* .component", root).get());
+  return $(selector, root).not($(".component *", root)).not(".component");
 }
 
 function checkForReservedClass(elems, shutup) {
@@ -544,7 +539,7 @@ $.golf = {
       $(data)._golf_addClass("component")
              ._golf_addClass(name.replace(".", "-"))
     );
-    html.find("style,script").remove();
+    html.find("style[type='text/golf'],script[type='text/golf']").remove();
     var cmp  = { 
       "name"  : name,
       "html"  : html.html(),
@@ -566,16 +561,6 @@ $.golf = {
   setupComponents: function() {
     var cmp, name, i, m, scripts=[];
 
-    d("Loading scripts/ directory...");
-    for (name in $.golf.scripts)
-      scripts.push(name);
-
-    // sort scripts by name
-    scripts = scripts.sort();
-
-    for (i=0, m=scripts.length; i<m; i++)
-      $.globalEval($.golf.scripts[scripts[i]].js);
-
     d("Setting up components now.");
 
     d("Loading components/ directory...");
@@ -596,6 +581,16 @@ $.golf = {
     // can't expect them to be idempotent
     if ($.golf.loaded)
       return;
+
+    d("Loading scripts/ directory...");
+    for (name in $.golf.scripts)
+      scripts.push(name);
+
+    // sort scripts by name
+    scripts = scripts.sort();
+
+    for (i=0, m=scripts.length; i<m; i++)
+      $.globalEval($.golf.scripts[scripts[i]].js);
 
     d("Done loading directories...");
     $.golf.loaded = true;
@@ -729,36 +724,34 @@ $.golf = {
       // $fake: the component-localized jQuery
 
       var $fake = function( selector, context ) {
-        var isHtml = /^[^<]*(<(.|\s)+>)[^>]*$/;
-
-        // if it's a function then immediately execute it (DOM loading
-        // is guaranteed to be complete by the time this runs)
-        if ($.isFunction(selector)) {
-          selector();
-          return;
-        }
-
-        // if it's not a css selector then passthru to jQ
-        if (typeof selector != "string" || selector.match(isHtml))
-          return new $(selector);
-
-        // it's a css selector
-        if (context != null)
-          return $(context)
-                    .find(selector)
-                    .not($(".component *", obj._dom).get())
-                    .not($("* .component", obj._dom).get());
-        else 
-          return $(obj._dom)
-                    .find("*")
-                    .andSelf()
-                    .filter(selector)
-                    .not($(".component *", obj._dom).get())
-                    .not($("* .component", obj._dom).get());
+        return new $fake.fn.init( selector, context );
       };
 
-      $.extend($fake, $);
+      $.extend(true, $fake, $);
       $fake.prototype = $fake.fn;
+      $fake.fn.init.prototype = $fake.fn;
+      $fake.Event.prototype = $.Event.prototype;
+
+      (function(orig) {
+        $fake.fn.init = function(selector) {
+          var isHtml = /^[^<]*(<(.|\s)+>)[^>]*$/;
+
+          // if it's a function then immediately execute it (DOM loading
+          // is guaranteed to be complete by the time this runs)
+          if ($.isFunction(selector))
+            return selector();
+
+          // if it's not a css selector then passthru to jQ
+          if (typeof selector != "string" || selector.match(isHtml))
+            return new orig(selector);
+
+          // it's a css selector
+          return new orig(obj._dom)
+                    .find(selector)
+                    .not($(".component *", obj._dom).get())
+                    .not(".component");
+        };
+      })($fake.fn.init);
 
       $fake.component = cmp;
 
