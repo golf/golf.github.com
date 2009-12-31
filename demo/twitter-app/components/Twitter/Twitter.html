@@ -59,8 +59,9 @@
         });
 
         if ($.inArray(search, searched) < 0) {
-          $(".searched ul")
-            .prepend("<li><a href='#/search/"+search+"/'>"+search+"</li>");
+          $(".searched ul").prepend(
+            "<li><a href='#/search/"+search+"/'>"+decodeURI(search)+"</li>"
+          );
           searched.push(search);
         }
 
