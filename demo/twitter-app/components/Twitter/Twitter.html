@@ -27,45 +27,30 @@
     }
   </style>
 
-  <script type="text/javascript">
-      $.golf.controller.push(
-        { route: "^/search/(.*)/$",
-          action: (function() {
-            var tweet;
-            return function(container, params) {
-              tweet = !!tweet ? tweet : new Component.Twitter();
-              container.empty().append(tweet);
-              tweet.load(params[1]);
-            };
-          })()
-        }
-      );
-  </script>
-
   <script type="text/golf">
     function() {
-      var searched = [];
+      var searched = [], ec = encodeURIComponent, 
+          text = $("input[name='username']");
 
-      this.load = function(search) {
+      this.search = function(search) {
         $("form").submit(function(){
-          $.golf.location("/search/"+$("input[name='username']").val()+"/");
+          $.golf.location("/search/"+ec(text.val())+"/");
           return false;
         });
 
         $(".twitter_component").empty().tweet({
           loading_text: "Loading...",
-          username: search,
+          username: ec(search),
           count: 30
         });
 
         if ($.inArray(search, searched) < 0) {
           $(".searched ul").prepend(
-            "<li><a href='#/search/"+search+"/'>"+decodeURI(search)+"</li>"
-          );
+            "<li><a href='#/search/"+ec(search)+"/'>"+search+"</a></li>");
           searched.push(search);
         }
 
-        $("input[name='username']").val(search).select();
+        text.val(search).select();
       };
     }
   </script>

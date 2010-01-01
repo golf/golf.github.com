@@ -312,7 +312,10 @@ $.golf = {
   singleton: {},
 
   location: function(hash) {
-    $.address.value(hash);
+    if (!!hash)
+      $.address.value(hash);
+    else
+      return $.golf.location.hash;
   },
 
   htmlEncode: function(text) {
@@ -781,6 +784,14 @@ $.golf = {
     return result;
   }
 
+};
+
+$.golf.location.params = function(i) {
+  var p = String($.golf.location.hash).replace(/(^\/|\/$)/g,"").split("/");
+  if (i == null)
+    return p;
+  else
+    return p[(p.length + i) % p.length];
 };
 
 $.require = $.golf.require($);
