@@ -11,6 +11,15 @@ $.golf.controller = [
         container.empty().append(tweet);
         tweet.search(decodeURIComponent(params[2]));
       };
+      return false;
     })()
+  },
+  { route: ".*",
+    action: function(container, params) {
+              container.empty()
+                .append("<h2>Not found.</h2>")
+                .append("<p><a href='#"+$.golf.defaultRoute+"'>Home.</a></p>");
+              return false;
+    }
   }
 ];
