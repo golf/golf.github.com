@@ -51,22 +51,28 @@ h2(#the-controller). The Controller
 
 The main topic of this article is really the configuration of the app's controller. Views and models are covered in detail elsewhere (see above).
 
-The actual controller code is deep within the Golf runtime. When you develop apps you configure it, similar to a "sinatra":http://www.sinatrarb.com/ app. When a request comes in, the controller looks for the @$.golf.controller@ array. This array must be set in the _controller.js_ source file in your app.
+The actual controller code is deep within the Golf runtime. When you develop apps you configure it, similar to a "sinatra":http://www.sinatrarb.com/ app, by adding a number of =={== _route_, _action_ ==}== tuples to a special controller array, @$.golf.controller@, in the _controller.js_ file.
+
+When a request comes in, the controller looks for the array. It then examines each route, starting from the beginning. It tries to match the route's _route_ property (a regular expression) against the request's URL hash. If a match is found, the route's action method is called to handle the request. If the action returns @false@, the controller "falls through" and continues to the next route in the array. When the controller runs out of routes or an action does not return @false@ the controller resets and prepares for the next request.
 
 A simple _controller.js_ file may look like this:
 
 {% highlight javascript %}
 $.golf.controller = [
-  { route: ".*",
+  { route: "^/home/$",
     action: function(container, params) {
-      var arg = params[0];
-      container.empty().append(new Component.com.example.Test(arg));
+      container.empty().append(new Component.Home());
+    }
+  },
+  { route: "^/blog/$",
+    action: function(container, params) {
+      container.empty().append(new Component.Blog());
     }
   }
 ];
 {% endhighlight %}
 
-This controller contains a single route which matches any URL hash (the "catchall" regex: @.*@), and the route's action instantiates and inserts inserts a component of type @Component.com.example.Test@ into the DOM.
+This controller contains two routes: matching the @/home/@ and @/blog/@ URL hashes, with actions instantiating and inserting into the DOM components of type @Home@ and @Blog@, respectively.
 
 h3(#routes). Routes
 
@@ -79,3 +85,35 @@ The @$.golf.controller@ array contains a number of objects, known as _routes_, e
 *params:* The result of the regular expression match between the URL hash and the _route_ property.
 *returns:* Return @true@ to allow controller to continue matching the URL hash against the rest of the routes (i.e. "fall-through").
 </div>
+
+h3(#default-route). The Default Route
+
+There are really two distinct types of default route: the route which is chosen when there is no URL hash provided by the user, and the route which is chosen when the URL hash that was provided does not match any configured routes.
+
+For the first type we assign a value to the @$.golf.defaultRoute@ property in the _controller.js_ file. The value is the URL hash to which the client will be redirected when they submit a request that doesn't specify one.
+
+The second type is serviced by a route with a regex of @.*@, meaning _match everything_. This route must be the last route in the @controller@ array, obviously--any routes after it will have already been matched by the @.*@, match-everything one.
+
+Here is an example _controller.js_ file containing both types of default route:
+
+{% highlight javascript %}
+// type 1: causes redirect 
+// http://me.com/app/ => http://me.com/app/#/home/default/
+$.golf.defaultRoute = "/home/default/";
+
+$.golf.controller = [
+  // normal route: matches requests of the form
+  // http://me.com/app/#/home/{something}/
+  { route: "^/home/([^/]+)/$",
+    action: function(container, params) {
+      container.empty().append(new Component.Home(params[1]));
+    }
+  },
+  // type 2: matches anything
+  { route: ".*",
+    action: function(container, params) {
+      container.empty().append(new Component.NotFound(params[0]));
+    }
+  }
+];
+{% endhighlight %}
