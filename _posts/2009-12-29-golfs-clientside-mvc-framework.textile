@@ -53,7 +53,7 @@ The main topic of this article is really the configuration of the app's controll
 
 The actual controller code is deep within the Golf runtime. When you develop apps you configure it by adding =={== _route_, _action_ ==}== tuples to a special array, @$.golf.controller@, in the _controller.js_ file.
 
-When a request comes in, the controller looks for this array. It then examines each route in turn, starting from the first one. It tries to match the route's _route_ property (a regular expression) against the request's URL hash. If the match is successful, the route's _action_ method is called to handle the request. If the action returns @true@, the controller "falls through" and continues to the next route in the array. When the controller runs out of routes, or an action does not return @true@, the controller resets and prepares for the next request.
+When a request comes in the controller looks for this array. It then examines each route in turn, starting from the first one. It tries to match the route's _route_ property (a regular expression) against the request's URL hash. If the match is successful, the route's _action_ method is called to handle the request. If the action returns @true@, the controller "falls through" and continues to the next route in the array. When the controller runs out of routes, or if an action does not return @true@, the controller resets and prepares for the next request.
 
 A simple _controller.js_ file may look like this:
 
