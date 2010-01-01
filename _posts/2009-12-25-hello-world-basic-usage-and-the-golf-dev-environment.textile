@@ -5,7 +5,7 @@ author: Micha Niskin
 categories: [examples]
 repo: 'http://github.com/golf/golf-example/tree/hello-world'
 zip: 'http://github.com/golf/golf-example/zipball/hello-world'
-demo: /demo/hello-world/
+demo: /demo/hello-world/#/home/
 ---
 
 So, now it's time to make a simple, "Hello, World" type of application to get started with Golf. The first thing is to create a directory in which to place all of the files that will make up your Golf app.
