@@ -66,7 +66,7 @@ $.golf.controller = [
 ];
 {% endhighlight %}
 
-This controller would have a default route (i.e. any URL hash matching @.*@), and it would insert a component of type @Component.com.example.Test@ into the DOM.
+This controller contains a single route which matches any URL hash (the "catchall" regex: @.*@), and the route's action inserts a component of type @Component.com.example.Test@ into the DOM.
 
 h3(#routes). Routes
 
