@@ -4,17 +4,48 @@ title: "Golf's Clientside MVC Framework"
 author: Micha Niskin
 ---
 
-Golf apps are built on a simple, straightforward MVC architecture. Requests are delegated to a _controller_. The controller selects the corresponding _route_ (or routes) and passes the request off to the associated _action_. The action then calls up the appropriate _view_ and inserts it into the DOM.
+Golf apps are built on a simple, straightforward MVC architecture. Requests are delegated to a _controller_. The controller selects the corresponding _route_ (or routes) and passes the request off to the associated _action_. The action then instantiates up the appropriate _component_ and inserts it into the DOM. The component fetches data from the _model_ via AJAX, and updates the DOM as necessary.
 
-At this point there are two main patterns to consider. One way is to fetch data from the _model_ from within the view code. Since the model is a remote webservice of some kind, this sometimes makes good sense. Another way is to fetch the data in the controller, and pass it to the view as arguments in the constructor. This makes sense when your data is of a general nature and you want to package a more generic view for later reuse.
+h3(#mvc-diagram). The MVC Pattern
 
-h2(#mvc-in-the-context-of-golf). MVC In The Context Of Golf
+<notextile>
+<pre>
+<code>
+                              -------        +-----------------+
+     http://example.com/myapp/#/home/        | Document (DOM)  |<--+
+                              -------        +-----------------+   |
+                                 |                                 |
+     URL hash changes ---------> |                                 |
+     (page doesn't reload)       V           +-----------------+   |
+                              ----------     |   Component A   |   |
+     http://example.com/myapp/#/foo/bar/     +-----------------+   |
+                              ----------                           |
+                                  |                                |
+                                  |                                |
+                     +--JS EVENT--+          +-----------------+   |
+                     |                   +-->|   Component B   |---+
+                     V                   |   +-----------------+    
+     +-------------------------------+   |            |             
+ +---|           Controller          |   |            +----AJAX----+
+ |   +-------------------------------+   |                         |
+ |                                       |   +-----------------+   |
+ |   +---------------+---------------+   |   |   Component C   |   |
+ |   |   Route #1    |   Action #1   |   |   +-----------------+   |
+ |   +---------------+---------------+   |                         |
+ +-->|   Route #2    |   Action #2   |---+                         |
+     +---------------+---------------+       +------+   +------+   |
+     |   Route #3    |   Action #3   |       | Data |   | Data |<--+
+     +---------------+---------------+       +------+   +------+   |
+                                                                   |
+                                             +------+   +------+   |
+                                             | Data |   | Data |<--+
+                                             +------+   +------+
 
-We can see that Golf provides a relatively standard MVC pattern. The models, views, and controller, in the context of Golf, are:
+</code>
+</pre>
+</notextile>
 
-- models := The _models_ are JavaScript objects that "interact with a backend webservice":/communicating-with-a-backend-web-service/.
-- views := The _views_ are "Golf components":/the-component-architecture/.
-- controller := The _controller_ is configured in the _controller.js_ file.
+You can see that Golf provides a fairly standard implementation of the MVC pattern. Notice that the role of the MVC model is a webservice; the view is a Golf component, and the controller is the array of =={==_route_, _action_==}== tuples.
 
 h2(#the-controller). The Controller
 
@@ -34,3 +65,17 @@ $.golf.controller = [
   }
 ];
 {% endhighlight %}
+
+This controller would have a default route (i.e. any URL hash matching @.*@), and it would insert a component of type @Component.com.example.Test@ into the DOM.
+
+h3(#routes). Routes
+
+The @$.golf.controller@ array contains a number of objects, known as _routes_, each with a _route_ property and an _action_ property.
+
+<div class="nounderline">
+- %(type)&lt;string&gt;% @route@ := The _route_ property is a regular expression. This regular expression will be matched against the URL hash. If a successful match is achieved, then the associated _action_ will be called.
+- %(type)&lt;bool&gt;% @action(@ %(type)&lt;jQuery&gt;% @container@, %(type)&lt;array&gt;% @params )@ := The _action_ property is a function that will be called upon a successful match of the URL hash against the _route_ property regex. This function instantiates components and inserts them into the DOM, thereby delegating control to the view. 
+*container:* The DOM element into which the component(s) will be inserted.
+*params:* The result of the regular expression match between the URL hash and the _route_ property.
+*returns:* Return @true@ to allow controller to continue matching the URL hash against the rest of the routes (i.e. "fall-through").
+</div>

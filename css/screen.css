@@ -227,6 +227,12 @@ img {
       color: #444;
     }
 
+    #post dl span.arg {
+      text-decoration: none;
+      font-size: 100%;
+      font-weight: normal;
+    }
+
     #post pre code {
       border: none;
     }
