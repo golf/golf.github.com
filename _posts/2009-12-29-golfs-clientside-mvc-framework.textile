@@ -66,7 +66,7 @@ $.golf.controller = [
 ];
 {% endhighlight %}
 
-This controller contains a single route which matches any URL hash (the "catchall" regex: @.*@), and the route's action inserts a component of type @Component.com.example.Test@ into the DOM.
+This controller contains a single route which matches any URL hash (the "catchall" regex: @.*@), and the route's action instantiates and inserts inserts a component of type @Component.com.example.Test@ into the DOM.
 
 h3(#routes). Routes
 
