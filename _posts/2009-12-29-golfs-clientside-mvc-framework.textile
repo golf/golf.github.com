@@ -4,7 +4,7 @@ title: "Golf's Clientside MVC Framework"
 author: Micha Niskin
 ---
 
-Golf apps are built on a simple, straightforward MVC architecture. Requests are delegated to a _controller_. The controller selects the corresponding _route_ (or routes) and passes the request off to the associated _action_. The action then instantiates the appropriate _component_ and inserts it into the DOM. The component fetches data from the _model_ via AJAX, and updates the DOM as necessary.
+Golf apps are built on a simple, straightforward MVC architecture. Requests are delegated to the _controller_. The controller selects the corresponding _route_ (or routes) and passes the request off to the associated _action_. The action then instantiates the appropriate _component_ and inserts it into the DOM. The component fetches data from the _model_ via AJAX, and updates the DOM as necessary.
 
 h3(#mvc-diagram). The MVC Pattern
 
