@@ -45,7 +45,7 @@ h3(#mvc-diagram). The MVC Pattern
 </pre>
 </notextile>
 
-You can see that Golf provides a fairly standard implementation of the MVC pattern. Notice that the role of the MVC model is a webservice; the view is a Golf component, and the controller is the array of =={==_route_, _action_==}== tuples.
+You can see that Golf provides a fairly standard implementation of the MVC pattern. Notice that the role of the MVC model is a webservice; the view is a Golf component, and the controller is the array of =={== _route_, _action_ ==}== tuples.
 
 h2(#the-controller). The Controller
 
