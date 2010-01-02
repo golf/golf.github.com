@@ -5,7 +5,7 @@ title: Handling POST Data And Forms
 author: Micha Niskin
 repo: 'http://github.com/golf/golf-example/tree/handling-post-data-and-forms'
 zip: 'http://github.com/golf/golf-example/zipball/handling-post-data-and-forms'
-demo: /demo/handling-post-data/#/home/
+demo: /demo/handling-post-data-and-forms/#/home/
 ---
 
 Golf applications handle form submissions in a very simple and straightforward way. Form data is handled in your JS code, via a regular _onsubmit_ event handler. To illustrate the technique we will construct a simple application and name it, say, _golf-example_.
