@@ -5,6 +5,7 @@ author: Micha Niskin
 categories: [examples]
 repo: 'http://github.com/golf/golf-example/tree/simple-component'
 zip: 'http://github.com/golf/golf-example/zipball/simple-component'
+zip: /demo/simple-component/
 ---
 
 Golf _components_ are reusable, self contained units from which the MVC views are built. Components are constructed from regular HTML, CSS, and JS. They are instantiated in your JS code and inserted into the DOM using jQuery.
