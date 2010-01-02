@@ -5,5 +5,9 @@ categories: [examples]
 title: Fancy Sortable Table Example
 description: Displays some tabular data in a fancy dynamic JavaScript sort of way.
 link: 'http://github.com/micha/golf-example-app'
+repo: 'http://github.com/golf/golf-example/tree/fancy-sortable-table'
+zip: 'http://github.com/golf/golf-example/zipball/fancy-sortable-table'
+demo: /demo/fancy-sortable-table/#/home/
 ---
 
+Check it out.
