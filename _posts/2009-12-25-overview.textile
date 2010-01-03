@@ -10,7 +10,7 @@ h2. JavaScript Proxying
 
 The main thing that makes the Golf server different is what we call _JavaScript Proxying_. This capability allows you to write dynamic clientside applications that make heavy use of JavaScript (in the client--specifically *not* serverside JavaScript), but are still completely accessible to clients that do not have JavaScript (or don't have it enabled). The Golf server transparently _proxies_ requests from non-JS clients, rendering the page on the server in an embedded browser environment, and returning pure HTML and CSS to the client. We call it proxying because the JavaScript virtual machine actually exists in this simulated browser on the server. Proxy mode has support for most events, such as _onclick_, _onsubmit_, etc. There is no special code for you to write, and the proxying is done transparently.
 
-With Javascript Proxying your app is a full clientside affair. No sessions to recreate the app's state for each request. No serverside form handling. No agonizing over graceful degradation.
+With Javascript Proxying your app is a full clientside affair. No sessions to recreate the app's state for each request. No serverside form handling. No agonizing over graceful degradation. It just automatically works!
 
 h2. Golf Server Features
 
