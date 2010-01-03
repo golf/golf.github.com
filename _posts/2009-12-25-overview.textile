@@ -6,13 +6,26 @@ author: Micha Niskin
 
 Golf is a web application server. It provides a way to build and deploy JavaScript (JS) driven webapps without sacrificing accessibility to JS-disabled browsers. By making dynamic, JS generated content fully accessible, Golf apps are designed from the ground up as clientside applications, and take advantage of a powerful, rich JS runtime environment.
 
-h2. Features
+h2. JavaScript Proxying
 
-This is what it does:
+The main thing that makes the Golf server different is what we call _JavaScript Proxying_. This capability allows you to write dynamic clientside applications that make heavy use of JavaScript (in the client--specifically *not* serverside JavaScript), but are still completely accessible to clients that do not have JavaScript (or don't have it enabled). The Golf server transparently _proxies_ requests from non-JS clients, rendering the page on the server in an embedded browser environment, and returning pure HTML and CSS to the client. We call it proxying because the JavaScript virtual machine actually exists in this simulated browser on the server. Proxy mode has support for most events, such as _onclick_, _onsubmit_, etc. There is no special code for you to write, and the proxying is done transparently.
 
-* Does stuff
-* And more stuff
-* And even more stuff
+This makes your app a full clientside affair. No sessions to recreate the app's state for each request. No serverside form handling. No agonizing over graceful degradation.
+
+h2. Golf Server Features
+
+Additionally, the Golf server has a number of features designed to make developing and deploying your apps easier. External dependencies are avoided. Configuration is kept to a minimum--it's done in a simple way where necessary, and always with reasonable defaults. The Golf server will work well right out of the box, but can be optimized for production easily.
+
+Specifically, the Golf server provides the following features:
+
+* *No dependencies:* The Golf server is distributed as a single jar file with no dependencies other than the Java Runtime Environment, version 1.5+.
+* *Local dev server:* You can run golf on the command line to start a local dev server while you're developing your app. Changes to your app source code are updated in the server instantly, so you don't need to restart anything to see the effect of your modification.
+* *Deployment options:* Golf has a number of options for deploying your app to a production server, and we're working on adding more. Deployment is taken care of by the Golf jar file itself, using command line options. You do not need Apache Ant or Maven, etc. However, Golf can be used from within those tools, if you wish. The current deployment options are:
+** *War file:* Package your app as a war file that can be deployed to a servlet container.
+** *Static HTML/JavaScript:* Package your app as simple static files. This allows deployment to any webserver that can serve files. In this mode your app will not be accessible to clients without JavaScript, but for JS enabled clients the app will run normally. This is useful for making demos and mockups.
+** *War file + AWS:* Package app as a war file (as above) but upload static resources to Amazon's CloudFront CDN. This means that JS-enabled clients load only a single HTML skeleton page for JS detection purposes (4K or so, uncompressed). After that the whole clientside app is loaded from the CDN.
+* *Fine-grained control over JS support:* Golf apps are easily configured to restrict certain user agents from access in non-JS mode, or to force either JS or non-JS mode, and more.
+
 
 okay?
 
