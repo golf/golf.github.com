@@ -275,3 +275,7 @@ img {
 span.new {
   color: #e99;
 }
+
+.last {
+  margin-bottom: 1em;
+}
