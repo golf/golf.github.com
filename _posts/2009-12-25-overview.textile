@@ -50,4 +50,4 @@ The Golf server provides a framework in which to write powerful clientside apps.
 
 This model would simplify the design and architecture of the backend app, and would facilitate offloading a good portion of the work of collating and organizing the data onto the client. This could result in a leaner backend and a nice separation of concerns between frontend app developers and backend ones.
 
-Incidentally, this model provides a nice partitioning of authorization in the backend. This means that mistakes or bugs in the frontend code can not do any harm. This is because the security of the data and backend services are all running in a completely separate machine--the server. A mistake in the frontend that causes it to fetch unauthorized data would result in only a failed XHR, not an exploit.
+Incidentally, this model provides a nice partitioning of authorization, placing it fully in the backend. Mistakes or bugs in the frontend code can not do any harm, because the security of the data is enforced by the backend--on the server. A frontend bug that causes it to try to fetch unauthorized data would result in only a failed XHR, not an exploit.
