@@ -18,6 +18,7 @@ Additionally, the Golf server has a number of features designed to make developi
 
 Specifically, the Golf server provides the following features:
 
+* *Open source:* The Golf server is open source software. The source code is available and you can pretty much do whatever you want with it.
 * *No dependencies:* The Golf server is distributed as a single jar file with no dependencies other than the Java Runtime Environment, version 1.5+.
 * *Local dev server:* You can run golf on the command line to start a local dev server while you're developing your app. Changes to your app source code are updated in the server instantly, so you don't need to restart anything to see the effect of your modification.
 * *Deployment options:* Golf has a number of options for deploying your app to a production server, and we're working on adding more. Deployment is taken care of by the Golf jar file itself, using command line options. You do not need Apache Ant or Maven, etc. However, Golf can be used from within those tools, if you wish. The current deployment options are:
