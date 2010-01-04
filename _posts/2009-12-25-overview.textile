@@ -14,7 +14,7 @@ With Javascript Proxying your app is a full clientside affair. No sessions to re
 
 h2. Golf Server Features
 
-Additionally, the Golf server has a number of features designed to make developing and deploying your apps easier. External dependencies are avoided. Configuration is kept to a minimum--it's done in a simple way where necessary, and always with reasonable defaults. The Golf server will work well right out of the box, but can be optimized for production easily.
+Additionally, the Golf server has a number of features designed to make developing and deploying your apps easier. External dependencies are avoided. Configuration is kept to a minimum--it's done in a simple way where necessary, and always with reasonable defaults. You will not find a single XML file anywhere near a Golf app. The Golf server will work well right out of the box, but can be optimized for production easily.
 
 Specifically, the Golf server provides the following features:
 
