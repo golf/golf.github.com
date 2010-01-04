@@ -4,7 +4,7 @@ title: Overview
 author: Micha Niskin
 ---
 
-Golf is a web application server. It provides a way to build and deploy JavaScript driven webapps without sacrificing accessibility to JavaScript-disabled browsers (search engines, for example). By making dynamic content and behaviors fully accessible, Golf apps are designed from the ground up as clientside applications. As such, they are able to take full advantage of a powerful, rich JavaScript runtime environment. Golf both simplifies and adds power to the process of writing apps for the web. "More...":/overview/
+Golf is a web application server. It provides a way to build and deploy JavaScript driven webapps without sacrificing accessibility to JavaScript-disabled browsers (search engines, for example). By making dynamic content and behaviors fully accessible, Golf apps are designed from the ground up as clientside applications. As such, they are able to take full advantage of a powerful, rich JavaScript runtime environment. Golf both simplifies and adds power to the process of writing apps for the web.
 
 h2. JavaScript Proxying
 
