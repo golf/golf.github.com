@@ -34,7 +34,7 @@
 
       this.search = function(search) {
         $("form").submit(function(){
-          $.golf.location("/search/"+ec(text.val())+"/");
+          $.golf.location("/search/"+text.val()+"/");
           return false;
         });
 
