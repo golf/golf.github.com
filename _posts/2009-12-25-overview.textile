@@ -12,6 +12,23 @@ The main thing that makes the Golf server different is what we call _JavaScript 
 
 With Javascript Proxying your app is a full clientside affair. No sessions to recreate the app's state for each request. No serverside form handling. No agonizing over graceful degradation. No reloading the page--ever. It just automatically works.
 
+h2. Golf Application Framework Features
+
+Golf provides a rich framework in which to devlop complex applications. The Golf clientside runtime environment was designed to simplify the app development process and be a robust, efficient architecture for creating apps from modular, encapsulated components. This allows you to divide work more easily between graphic designers, HTML/CSS designers, JavaScript frontend programmers, backend service programmers, and application architects. Because it is a modular system, many of these tasks can be done in parallel without the need for complex synchronization between the different areas.
+
+The Golf framework provides:
+
+* *Simple, flexible clientside MVC:* Golf apps are divided into _models_, _views_, and _controller_. This is standard practice nowadays, and is probably familiar to anyone reading this. A full description of the Golf implementation can be found "here":/golfs-clientside-mvc-framework/.
+* *Built on jQuery:* The Golf framework integrates tightly with jQuery. This provides a solid, cross-browser foundation for DOM manipulation and AJAX. JQuery is simple, light, and fast, and it is very reliable.
+* *Component encapsulation:* The _views_ in Golf are made up of _components_. These components are like self-contained minipages that can be instantiated and inserted into the DOM as if they were native DOM elements. Components each have their own completely encapsulated HTML, CSS, and JavaScript. This partitioning aspect of components includes:
+** CSS rules in one component do not ever affect elements outside of the component, or any nested components. Neither do CSS class names.
+** The jQuery object @$@ is similarly encapsulated, so that doing something like @$("*")@ in your component's JavaScript would return only elements "owned" by the component. This goes for any nested components that have been appended to any of the component's elements, too. So you can create these component objects, insert them into the DOM, and not have to worry about any side effects leaking over from other components.
+** Resources, such as images, for example, are also private. Components can be packaged with their own resources as a modular unit, and inserted into any page. They will look and behave identically anywhere.
+* *Component public methods:* You can define public methods in your component constructor to provide a public API. This allows structured access to the component from other components or code. For example, a component could have a @showResults@ method that would be called by a parent component, thus allowing the parent to cause updates in the child without direct manipulation of the child's DOM.
+* *Component templates using jQuery:* JQuery is, arguably, the ultimate HTML templating engine. Golf components are built from HTML templates, and the component JavaScript uses jQuery to insert content dynamically. Very smooth and simple.
+* *"Back-Button" And Deep Linking Support:* Golf provides built-in support for dynamic history and deep-linking. This means that your app never reloads the page, but the back button still works and you can have a multiple entry points. Users can copy the URL in their browser's address bar and send it to their friends or twitter it, and others can follow that link to enter the app at exactly that point. Your app can contain hyperlinks that are portable and can be copied and pasted into an email, for instance. Of course, this feature works equally well in proxy mode, which is important when dealing with search engine spiders. Links that appear in search engine results will always lead to the right place.
+*(last) *Plugins, Mixins, And Libraries:* Golf apps can load global jQuery plugins and library scripts, as expected. But Golf also provides a flexible, yet powerful subset of ServerJS functionality that allows the use of component mixins and local namespace loading of libraries.
+
 h2. Golf Server Features
 
 Additionally, the Golf server has a number of features designed to make developing and deploying your apps easier. External dependencies are avoided. Configuration is kept to a minimum--it's done in a simple way where necessary, and always with reasonable defaults. You will not find a single XML file anywhere near a Golf app. The Golf server will work well right out of the box, but can be optimized for production easily.
@@ -26,23 +43,6 @@ Specifically, the Golf server provides the following features:
 ** *Static HTML/JavaScript:* Package your app as simple static files. This allows deployment to any webserver that can serve files. In this mode your app will not be accessible to clients without JavaScript, but for JS enabled clients the app will run normally. This is useful for making demos and mockups.
 ** *War file + AWS:* Package app as a war file (as above) but upload static resources to Amazon's CloudFront CDN. This means that JS-enabled clients load only a single HTML skeleton page for JS detection purposes (4K or so, uncompressed). After that the whole clientside app is loaded from the CDN.
 *(last) *Fine-grained control over JS support:* Golf apps are easily configured to restrict certain user agents from access in non-JS mode, or to force either JS or non-JS mode, and more.
-
-h2. Golf Application Framework Features
-
-Golf also provides a rich framework in which to devlop complex applications. The Golf clientside runtime environment was designed to simplify the app development process and be a robust, efficient architecture for creating apps from modular, encapsulated components. This allows you to divide work more easily between graphic designers, HTML/CSS designers, JavaScript frontend programmers, backend service programmers, and application architects. Because it is a modular system, many of these tasks can be done in parallel without the need for complex synchronization between the different areas.
-
-The Golf framework provides:
-
-* *Simple, flexible clientside MVC:* Golf apps are divided into _models_, _views_, and _controller_. This is standard practice nowadays, and is probably familiar to anyone reading this. A full description of the Golf implementation can be found "here":/golfs-clientside-mvc-framework/.
-* *Built on jQuery:* The Golf framework integrates tightly with jQuery. This provides a solid, cross-browser foundation for DOM manipulation and AJAX. JQuery is simple, light, and fast, and it is very reliable.
-* *Component encapsulation:* The _views_ in Golf are made up of _components_. These components are like self-contained minipages that can be instantiated and inserted into the DOM as if they were native DOM elements. Components each have their own completely encapsulated HTML, CSS, and JavaScript. This partitioning aspect of components includes:
-** CSS rules in one component do not ever affect elements outside of the component, or any nested components. Neither do CSS class names.
-** The jQuery object @$@ is similarly encapsulated, so that doing something like @$("*")@ in your component's JavaScript would return only elements "owned" by the component. This goes for any nested components that have been appended to any of the component's elements, too. So you can create these component objects, insert them into the DOM, and not have to worry about any side effects leaking over from other components.
-** Resources, such as images, for example, are also private. Components can be packaged with their own resources as a modular unit, and inserted into any page. They will look and behave identically anywhere.
-* *Component public methods:* You can define public methods in your component constructor to provide a public API. This allows structured access to the component from other components or code. For example, a component could have a @showResults@ method that would be called by a parent component, thus allowing the parent to cause updates in the child without direct manipulation of the child's DOM.
-* *Component templates using jQuery:* JQuery is, arguably, the ultimate HTML templating engine. Golf components are built from HTML templates, and the component JavaScript uses jQuery to insert content dynamically. Very smooth and simple.
-* *"Back-Button" And Deep Linking Support:* Golf provides built-in support for dynamic history and deep-linking. This means that your app never reloads the page, but the back button still works and you can have a multiple entry points. Users can copy the URL in their browser's address bar and send it to their friends or twitter it, and others can follow that link to enter the app at exactly that point. Your app can contain hyperlinks that are portable and can be copied and pasted into an email, for instance. Of course, this feature works equally well in proxy mode, which is important when dealing with search engine spiders. Links that appear in search engine results will always lead to the right place.
-*(last) *Plugins, Mixins, And Libraries:* Golf apps can load global jQuery plugins and library scripts, as expected. But Golf also provides a flexible, yet powerful subset of ServerJS functionality that allows the use of component mixins and local namespace loading of libraries.
 
 h2. Backend Persistence Options
 
