@@ -67,14 +67,15 @@
     table.properties > tbody > tr:last > td {
       border-bottom: none;
     }
+
+    table.properties > tbody > tr:nth-child(odd) {
+      background: #eee;
+    }
   </style>
 
   <script type="text/golf">
     
     function(data) {
-
-      $.require("jquery.tableize");
-      $.require("jquery.tablesort");
 
       $(".container").append(
         $(data)
