@@ -18,19 +18,11 @@ var data = [
   ]
 ];
 
-$.golf.defaultRoute = "/test/home/";
-
 $.golf.controller = [
-
-  { route: "^/test/([^/]+)/$",
-    action: function(container, params) {
-      container.empty().append(new Component.TableExample(data));
-    }
-  },
 
   { route: ".*",
     action: function(container, params) {
-      container.empty().append("<p>Page not found.</p>");
+      container.empty().append(new Component.TableExample(data));
     }
   }
 
