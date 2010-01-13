@@ -1,0 +1,74 @@
+---
+layout: example
+title: Distributed Controller
+author: Micha Niskin
+categories: [examples]
+repo: 'http://github.com/golf/golf-example/tree/route-dirs'
+zip: 'http://github.com/golf/golf-example/zipball/route-dirs'
+demo: /demo/route-dirs/#/home/
+---
+
+This example demonstrates a method of separating the controller into encapsulated parts. The method uses a plugin to compile the monolithic controller from a number of smaller controller files at runtime.
+
+h2. The Plugin
+
+The main idea is to use a directory tree to provide a heirarchy of mini-controllers, combining them at runtime, preserving the tree structure in the resulting controller routes. The directory tree is chosen to be rooted at the _plugins/routes/_ directory. 
+
+JavaScript files (the mini-controllers) are located in this tree. The path of the mini-controller file relative to the _plugins/routes/_ directory is a sort of URL hash path prefix for all routes specified inside. For example, the file _plugins/routes/foo/bar.js_ would define routes relative to the URL hash path prefix _/foo/bar/_ in the application.
+
+Consider the example _plugins/routes/foo/bar.js_ containing the following:
+
+{% highlight javascript %}
+/*
+ * This file is going to be loaded via require() from the 
+ * plugin code. We want to return the routes as the result
+ * of the require() call, so we set the special "exports"
+ * object, similar to the way CommonJS/ServerJS does things.
+ */
+
+exports = [
+  
+  /* This route will be accessed via /foo/bar/baz/ in the
+     application */
+  { route: "/baz/",
+    action: function(container, params) {
+      // handle the request
+    }
+  },
+
+  /* This is a catchall route, but only for URL hashes with
+     the /foo/bar/ URL hash path prefix. */
+  { route: ".*",
+    action: function(container, params) {
+      // handle the request
+    }
+  }
+
+];
+{% endhighlight %}
+
+Here two paths are defined, _/foo/bar/baz/_ and _/foo/bar/{anything else...}_.
+
+h3. Loading The Plugin
+
+The plugin is loaded via @require()@ at the end of the main _controller.js_ file. This is a simple example _controller.js_ that loads the plugin:
+
+{% highlight javascript %}
+// Define the main controller.
+
+$.golf.controller = [
+
+  /* This is a catchall route. It will service all requests
+     *except* for requests that call routes defined in the
+     mini-controllers. */
+  { route: ".*",
+    action: function(container, params) {
+      // handle the request
+    }
+  }
+
+];
+
+// Load the "route_dirs" plugin.
+$.require("route_dirs");
+{% endhighlight %}
