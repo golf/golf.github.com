@@ -113,13 +113,17 @@ img {
     color: black;
   }
 
-  .site .meta a,
   .site #home a.extra,
   .site #post a.extra,
   .site .title a.extra {
     color: #aaa;
     text-decoration: none;
     margin-left: 1em;
+  }
+
+  .site .meta a {
+    color: #aaa;
+    text-decoration: none;
   }
 
   .site .meta a:hover,
