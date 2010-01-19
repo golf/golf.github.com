@@ -113,6 +113,7 @@ img {
     color: black;
   }
 
+  .site .meta a.extra,
   .site #home a.extra,
   .site #post a.extra,
   .site .title a.extra {
@@ -121,6 +122,7 @@ img {
     margin-left: 1em;
   }
 
+  .site .meta a.extra:hover,
   .site #home a.extra:hover,
   .site #post a.extra:hover,
   .site .title a.extra:hover {
