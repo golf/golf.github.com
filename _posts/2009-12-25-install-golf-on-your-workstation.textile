@@ -2,6 +2,7 @@
 layout: post
 title: Install Golf On Your Workstation
 author: Micha Niskin
+author_url: 'http://github.com/micha'
 ---
 
 # Download the Golf zip file. &raquo; "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip

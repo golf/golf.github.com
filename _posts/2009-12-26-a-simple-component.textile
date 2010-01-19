@@ -2,6 +2,7 @@
 layout: example
 title: "A Simple Component"
 author: Micha Niskin
+author_url: 'http://github.com/micha'
 categories: [examples]
 repo: 'http://github.com/golf/golf-example/tree/simple-component'
 zip: 'http://github.com/golf/golf-example/zipball/simple-component'

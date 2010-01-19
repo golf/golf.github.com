@@ -2,6 +2,7 @@
 layout: post
 title: "Conventions 2: Global Variables And Reserved Names"
 author: Micha Niskin
+author_url: 'http://github.com/micha'
 ---
 
 The Golf JavaScript environment includes a number of global variables and functions. Additionally, the Golf framework requires exclusive use of certain CSS class names and/or ids. And finally, there are a few naming conventions which should be kept in mind when developing Golf apps.

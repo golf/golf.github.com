@@ -3,6 +3,7 @@ layout: post
 title: New Features Planned For Golf
 categories: [news]
 author: Micha Niskin
+author_url: 'http://github.com/micha'
 ---
 
 Hi. I ("micha":http://github.com/micha) will be working with Alan ("alandipert":http://github.com/alandipert), and Julio ("capotej":http://github.com/capotej) to develop some new features for the Golf framework.

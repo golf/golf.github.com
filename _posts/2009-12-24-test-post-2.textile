@@ -3,6 +3,7 @@ layout: post
 title: Test Post 2
 categories: [news]
 author: Micha Niskin
+author_url: 'http://github.com/micha'
 ---
 
 This is a test!

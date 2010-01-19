@@ -2,6 +2,7 @@
 layout: example
 title: "Hello, World: Basic Usage And The Golf Dev Environment"
 author: Micha Niskin
+author_url: 'http://github.com/micha'
 categories: [examples]
 repo: 'http://github.com/golf/golf-example/tree/hello-world'
 zip: 'http://github.com/golf/golf-example/zipball/hello-world'

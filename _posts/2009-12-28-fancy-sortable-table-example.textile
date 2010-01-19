@@ -1,6 +1,7 @@
 ---
 layout: example
 author: Micha Niskin
+author_url: 'http://github.com/micha'
 categories: [examples]
 title: Fancy Sortable Table Example
 description: Displays some tabular data in a fancy dynamic JavaScript sort of way.
