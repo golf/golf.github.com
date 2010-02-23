@@ -29,12 +29,10 @@ And here is a component using coffee-script for its constructor:
   @y: (x) -> @a*x + @b
 
   $("form").submit((event) =>
-    event.preventDefault();
-    if (x: parseFloat($("input[name='x_in']").val())) == NaN
-      alert "Not a Number!"
-    else
-      $(".xval").text(x)
-      $(".yval").text(@y(x))
+    x: $("input[name='x_in']").val()
+    $(".xval").text(x)
+    $(".yval").text(@y(parseFloat(x)))
+    false
   ).submit()
 </script>
 <div>y(<span class="xval"/>) = <span class="yval"/></div>
