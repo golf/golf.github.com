@@ -41,6 +41,7 @@ h2(#golf-reference). Golf Reference
 # "(x)Plugins: Extending jQuery In Golf":/plugins-extending-jquery-in-golf/
 # "(x)Mixins: Extending The Component API":/mixins-extending-the-component-api/
 # "(x)Libraries And Standalone Scripts":/libraries-and-standalone-scripts/
+# "JavaScript Preprocessor Hooks":/javascript-preprocessor-hooks/
 
 h2(#technical). Technical
   
