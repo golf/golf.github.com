@@ -1,0 +1,48 @@
+---
+layout: post
+title: "JavaScript Preprocessor Hooks"
+author: Micha Niskin
+author_url: 'http://github.com/micha'
+---
+
+You can use the familiar @#!@ semantic to preprocess the JavaScript in your Golf apps. In any JavaScript file or component @<script type="text/golf">@ tag, simply prepend a @#!@ line with the preprocessor you wish to have run on your JavaScript. 
+
+h2. Examples
+
+Here is a plugin/library using coffee-script (say _plugins/mylib.js_):
+
+{% highlight javascript %}
+#!coffee -p
+exports.isNumber: (x) -> typeof x == "number" || x instanceof Number
+exports.sayhi: -> alert("hello there!")
+{% endhighlight %}
+
+And here is a component using coffee-script for its constructor:
+
+{% highlight html %}
+<div>
+  <style type="text/golf"></style>
+<script type="text/golf">#!coffee -np
+(a,b) ->
+  @a: a
+  @b: b
+  @y: (x) -> @a*x + @b
+
+  $("form").submit((event) =>
+    if (x: parseFloat($("input[name='x_in']").val())) == NaN
+      alert "Not a Number!"
+      return false
+    $(".xval").text(x)
+    $(".yval").text(@y(x))
+    false
+  ).submit()
+</script>
+<div>y(<span class="xval"/>) = <span class="yval"/></div>
+  <form>
+    x: <input type="text" name="x_in" value="0"/>
+    <input type="submit"/>
+  </form>
+</div>
+{% endhighlight %}
+
+Note that coffee-script uses indentation to identify blocks, so the @<script>@ tag is not indented.
