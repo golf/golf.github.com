@@ -92,13 +92,13 @@ ul.posts {
 /*****************************************************************************/
 
 img {
-  max-width: 640px;
+  max-width: 40em;
 }
 
 .site {
   font-size: 110%;
   text-align: justify;
-  width: 640px;
+  width: 40em;
   margin: 3em auto 2em auto;
   line-height: 1.5em;
 }
