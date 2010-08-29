@@ -5,6 +5,8 @@ author: Micha Niskin
 author_url: 'http://github.com/micha'
 ---
 
+<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/VqeK7vYxUeY?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/VqeK7vYxUeY?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
+
 # Download the Golf zip file. &raquo; "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip
 # Unzip it into a directory in your path (e.g. @~/bin@).
 
