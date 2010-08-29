@@ -51,6 +51,11 @@ table {
   font: 100%;
 }
 
+.video {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
 /*****************************************************************************/
 /*
 /* Home
@@ -79,11 +84,6 @@ ul.posts {
     font-family: Monaco, "Courier New", monospace;
     font-size: 80%;
   }
-
-.video {
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
 
 /*****************************************************************************/
 /*
