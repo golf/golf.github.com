@@ -7,7 +7,7 @@ Golf is a web application server. It provides a way to build and deploy JavaScri
 
 <notextile>
   <div class="video">
-    <object width="40em">
+    <object width="512">
       <param name="movie" 
         value="http://www.youtube.com/v/Y8j4mNhyarA?fs=1&amp;hl=en_US"></param>
       <param name="allowFullScreen" value="true"></param>
