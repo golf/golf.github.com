@@ -52,7 +52,7 @@ h2(#golf-reference). Golf Reference
 h2(#technical). Technical
   
 # "How JavaScript Proxying Works In Golf":/how-javascript-proxying-works-in-golf/
-# "(x)How Golf Detects Whether JavaScript Is Enabled":/how-golf-detects-whether-javascript-is-enabled/
+# "How Golf Detects Whether JavaScript Is Enabled":/how-golf-detects-whether-javascript-is-enabled/
 # "(x)Search Engine Optimization And Golf Apps":/search-engine-optimization-and-golf-apps/
 # "(x)Security And Golf Apps":/security-and-golf-apps/
 # "(x)Golf Server Architecture":/golf-server-architecture/
