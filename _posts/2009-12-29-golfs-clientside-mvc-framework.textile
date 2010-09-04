@@ -9,6 +9,8 @@ Golf apps are built on a simple, straightforward MVC architecture. Requests are 
 
 h3(#mvc-diagram). The MVC Pattern
 
+!/images/MVC.png!:/images/MVC.png
+
 <notextile>
 <pre>
 <code>
