@@ -38,9 +38,7 @@ We will make a component in which we will create the form (see "A Simple Compone
 
 Notice where the actual handling of the form is taking place, right in the JS event handler. Normally you might be doing an AJAX call at this point, perhaps, but for the purposes of this example we simply update the DOM with the submitted form data.
 
-*Also, don't forget to return @false@ from your _onsubmit_ handler!* If you forget this the form will actually be submitted, causing the page to reload and prevent the JS handler from working.
-
-Now, in order to make this an app we will also need a controller, of course. Create a simple _controller.js_ file with the following contents:
+In order to make this an app we will also need a controller, of course. Create a simple _controller.js_ file with the following contents:
 
 {% highlight javascript %}
 $.golf.controller = [
