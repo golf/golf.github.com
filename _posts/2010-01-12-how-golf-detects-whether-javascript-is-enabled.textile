@@ -1,0 +1,8 @@
+---
+layout: post
+title: "How Golf Detects Whether JavaScript Is Enabled"
+author: Micha Niskin
+author_url: 'http://github.com/micha'
+---
+
+!/images/golf_jsdetect.png!:/images/golf_jsdetect.png
