@@ -6,14 +6,14 @@ author: Micha Niskin
 author_url: 'http://github.com/micha'
 ---
 
-h2. Serverside Scripting
+h2. Serverside Scripting (PHP, RoR, etc.)
 
 !/images/golf_howitworks_1.png!:/images/golf_howitworks_1.png
 
-h2. Clientside Scripting
+h2. Clientside Scripting (Golf)
 
 !/images/golf_howitworks_2.png!:/images/golf_howitworks_2.png
 
-h2. Clientside Scripting On The Server (Golf Proxy Mode)
+h2. Clientside Scripting On The Server (Golf: Proxy Mode)
 
 !/images/golf_howitworks_3.png!:/images/golf_howitworks_3.png
