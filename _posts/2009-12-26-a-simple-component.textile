@@ -57,7 +57,7 @@ Create the _controller.js_ file:
 $.golf.controller = [
   { route: ".*",
     action: function(container, params) {
-      container.empty().append(new Component.HelloWorld());
+      container.append(new Component.HelloWorld());
     }
   }
 ];
@@ -67,7 +67,7 @@ Note the @Component@ namespace that our component is in. This is true of all com
 
 bc. new Component.com.example.HelloWorld()
 
-But we're keeping things simeple for now. Okay! It's time to test it out!
+But we're keeping things simple for now. Okay! It's time to test it out!
 
 h2. Test The Application In Dev Mode
 
@@ -78,5 +78,3 @@ bc. golf .
 Then, open a browser and navigate to "http://localhost:4653/golf-example/#/home/":http://localhost:4653/golf-example/#/home/. You should see something similar to this:
 
 !/images/simple-component.png!:/images/simple-component.png
-
-As always, everything works fine without JS enabled in the browser, too.

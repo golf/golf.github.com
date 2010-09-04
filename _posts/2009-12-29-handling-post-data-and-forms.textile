@@ -35,7 +35,7 @@ We will make a component in which we will create the form (see "A Simple Compone
 </div>
 {% endhighlight %}
 
-Notice where the actual handling of the form is taking place, right in the JS event handler. Normally you might be doing an AJAX call at this point, perhaps, but for the purposes of this example we simply update the DOM with the submitted form data.
+Notice where the actual handling of the form is taking place, right in the JS event handler. Normally you would perform an AJAX request at this point, to upload the form data to the server for processing.
 
 In order to make this an app we will also need a controller, of course. Create a simple _controller.js_ file with the following contents:
 
@@ -43,7 +43,7 @@ In order to make this an app we will also need a controller, of course. Create a
 $.golf.controller = [
   { route: ".*",
     action: function(container, params) {
-      container.empty().append(new Component.FormExample());
+      container.append(new Component.FormExample());
     }
   }
 ];

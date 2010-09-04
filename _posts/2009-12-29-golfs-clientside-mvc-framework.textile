@@ -5,7 +5,7 @@ author: Micha Niskin
 author_url: 'http://github.com/micha'
 ---
 
-Golf apps are built on a simple, straightforward MVC architecture. Requests are delegated to the _controller_. The controller selects the corresponding _route_ and passes the request off to the associated _action_. The action then instantiates the appropriate _component_ and inserts it into the DOM. The component fetches data from the _model_ via AJAX, and updates the DOM as necessary.
+Golf apps are built on a simple, straightforward MVC architecture. Requests are delegated to the _controller_. The controller selects the corresponding _route_ and passes the request off to the associated _action_. The action then instantiates the appropriate _component_ and inserts it into the DOM. The component fetches data from the _model_ via AJAX and updates its DOM as necessary.
 
 h3(#mvc-diagram). The MVC Pattern
 
@@ -15,8 +15,8 @@ h3(#mvc-diagram). The MVC Pattern
                               -------        +-----------------+
      http://example.com/myapp/#/home/        | Document (DOM)  |<--+
                               -------        +-----------------+   |
-                                 |                                 |
-     URL hash changes ---------> |                                 |
+    *User interaction*           |                                 |
+     changes URL hash ---------> |                                 |
      (page doesn't reload)       V           +-----------------+   |
                               ----------     |   Component A   |   |
      http://example.com/myapp/#/foo/bar/     +-----------------+   |
@@ -54,20 +54,20 @@ The main topic of this article is really the configuration of the app's controll
 
 The actual controller code is deep within the Golf runtime. When you develop apps you configure it by adding =={== _route_, _action_ ==}== tuples to a special array, @$.golf.controller@, in the _controller.js_ file.
 
-When a request comes in the controller looks for this array. It then examines each route in turn, starting from the first one. It tries to match the route's _route_ property (a regular expression) against the request's URL hash. If the match is successful, the route's _action_ method is called to handle the request. If the action returns @true@, the controller "falls through" and continues to the next route in the array. When the controller runs out of routes, or if an action does not return @true@, the controller resets and prepares for the next request.
+When a request comes in, the controller iterates through the @$.golf.controller@ array. Each route is examined in turn. If the route's _route_ property (a regular expression) matches the request's URL hash the route's _action_ method is called to handle the request.
 
 A simple _controller.js_ file may look like this:
 
 {% highlight javascript %}
 $.golf.controller = [
-  { route: "^/home/$",
+  { route: "/home/",
     action: function(container, params) {
-      container.empty().append(new Component.Home());
+      container.append(new Component.Home());
     }
   },
-  { route: "^/blog/$",
+  { route: "/blog/",
     action: function(container, params) {
-      container.empty().append(new Component.Blog());
+      container.append(new Component.Blog());
     }
   }
 ];
@@ -75,16 +75,17 @@ $.golf.controller = [
 
 This controller contains two routes, matching the @/home/@ and @/blog/@ URL hashes, and with actions instantiating and inserting into the DOM components of type @Home@ and @Blog@, respectively.
 
+*Note:* The route regex is anchored by default. That means that the examples there would actually be @^/home/$@ and @^/blog/$@. This is to make the regexes easier to read, as most of the time anchored expressions are more useful for routes.
+
 h3(#routes). Routes
 
 The @$.golf.controller@ array contains a number of objects, known as _routes_. Each route must have a _route_ property and an _action_ method.
 
 <div class="nounderline">
-- %(type)&lt;string&gt;% @route@ := The _route_ property is a regular expression. This regular expression will be matched against the URL hash. If a successful match is achieved, then the associated _action_ will be called.
+- %(type)&lt;string&gt;% @route@ := The _route_ property is a regular expression. This regular expression will be matched against the URL hash. If a successful match is achieved, then the associated _action_ will be called. The regex is anchored by default, which is important to keep in mind.
 - %(type)&lt;bool&gt;% @action(@ %(type)&lt;jQuery&gt;% @container@, %(type)&lt;array&gt;% @params )@ := The _action_ method is a function that will be called upon a successful match of the URL hash against the _route_ property regex. This function instantiates components and inserts them into the DOM, thereby delegating control to the view. 
 *container:* The DOM element into which the component(s) will be inserted.
 *params:* The result of the regular expression match between the URL hash and the _route_ property.
-*returns:* Return @true@ to allow controller to continue matching the URL hash against the rest of the routes (i.e. "fall-through").
 </div>
 
 h3(#default-route). The Default Route
@@ -93,27 +94,27 @@ There are really two distinct types of default route: the route which is chosen 
 
 For the first type we assign a value to the @$.golf.defaultRoute@ property in the _controller.js_ file. The value is the URL hash to which the client will be redirected when they submit a request that doesn't specify one.
 
-The second type is serviced by a route with a regex of @.*@, meaning _match everything_. This route must be the last route in the @controller@ array, obviously--any routes after it will have already been matched by the @.*@, match-everything one.
+The second type is serviced by a route with a regex of @.*@, meaning _match everything_. This route must be the last route in the @controller@ array, obviously--any routes after it will be inaccessible, as the route will have already been matched by @.*@, the match-everything route.
 
 Here is an example _controller.js_ file containing both types of default route:
 
 {% highlight javascript %}
-// type 1: causes redirect 
-// http://me.com/app/ => http://me.com/app/#/home/default/
+// type 1: causes redirect if no hash was provided in the URL
+// i.e. http://me.com/app/ => http://me.com/app/#/home/default/
 $.golf.defaultRoute = "/home/default/";
 
 $.golf.controller = [
   // normal route: matches requests of the form
   // http://me.com/app/#/home/{something}/
-  { route: "^/home/([^/]+)/$",
+  { route: "/home/([^/]+)/",
     action: function(container, params) {
-      container.empty().append(new Component.Home(params[1]));
+      container.append(new Component.Home(params[1]));
     }
   },
-  // type 2: matches anything
+  // type 2: matches anything that didn't match any of the above routes
   { route: ".*",
     action: function(container, params) {
-      container.empty().append(new Component.NotFound(params[0]));
+      container.append(new Component.NotFound(params[0]));
     }
   }
 ];
