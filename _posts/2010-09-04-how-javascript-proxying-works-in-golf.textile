@@ -16,7 +16,7 @@ h2. Clientside Scripting
 
 h2. Clientside Scripting On The Server (Golf Proxy Mode)
 
-!/images/golf_proxy_flowchart_2.png!:/images/golf_howitworks_3.png
+!/images/golf_howitworks_3.png!:/images/golf_howitworks_3.png
 !/images/golf_proxy_flowchart_2.png!:/images/golf_proxy_flowchart_2.png
 
 # Download the Golf zip file. &raquo; "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip
