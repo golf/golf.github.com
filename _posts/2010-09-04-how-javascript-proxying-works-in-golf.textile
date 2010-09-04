@@ -6,8 +6,16 @@ author: Micha Niskin
 author_url: 'http://github.com/micha'
 ---
 
+h2. Serverside Scripting
+
 !/images/golf_proxy_flowchart_3.png!:/images/golf_proxy_flowchart_3.png
+
+h2. Clientside Scripting
+
 !/images/golf_proxy_flowchart_1.png!:/images/golf_proxy_flowchart_1.png
+
+h2. Clientside Scripting On The Server (Golf Proxy Mode)
+
 !/images/golf_proxy_flowchart_2.png!:/images/golf_proxy_flowchart_2.png
 
 # Download the Golf zip file. &raquo; "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip
