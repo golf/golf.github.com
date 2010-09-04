@@ -22,7 +22,6 @@ We will make a component in which we will create the form (see "A Simple Compone
       $("form").submit(
         function() {
           $("span").text($("input[name='info']").select().val());
-          return false;
         }
       );
     }
