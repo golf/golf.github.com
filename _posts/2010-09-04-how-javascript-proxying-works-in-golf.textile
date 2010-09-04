@@ -1,0 +1,20 @@
+
+---
+layout: post
+title: How JavaScript Proxying Works In Golf
+author: Micha Niskin
+author_url: 'http://github.com/micha'
+---
+
+!/images/golf_proxy_flowchart_3.png!:/images/golf_proxy_flowchart_3.png
+!/images/golf_proxy_flowchart_1.png!:/images/golf_proxy_flowchart_1.png
+!/images/golf_proxy_flowchart_2.png!:/images/golf_proxy_flowchart_2.png
+
+# Download the Golf zip file. &raquo; "golf.zip":http://cloud.github.com/downloads/golf/golf/golf.zip
+# Unzip it into a directory in your path (e.g. @~/bin@).
+
+Now you can open a terminal and do:
+
+bc. golf --help
+
+This will print the Golf command line usage and options.
